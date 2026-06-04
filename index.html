@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Patterns Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>🎨 Design Patterns Quiz</h1>
+            <div class="header-controls">
+                <div class="stats-display">
+                    <span id="total-quizzes">Total Quizzes: 0</span>
+                    <span id="average-score">Avg Score: 0%</span>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Home Screen -->
+        <section id="home-screen" class="screen active">
+            <h2>Choose a Quiz Category</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category="reasoning-agents">
+                    <div class="card-icon">🤖</div>
+                    <h3>Reasoning and Agents</h3>
+                    <p>Explore AI agents, reasoning systems, and decision-making processes</p>
+                    <div class="card-meta">
+                        <span class="question-count">40 Questions</span>
+                    </div>
+                    <button class="start-btn" type="button">Start Quiz</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Screen -->
+        <section id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <h2 id="quiz-title">Quiz Title</h2>
+                <button id="quit-btn" class="quit-btn" type="button">Quit Quiz</button>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <span id="progress-text">Question 1 of 10</span>
+            </div>
+
+            <div class="question-container">
+                <h3 id="question-text" class="question-text">Question text goes here?</h3>
+                <div id="options-container" class="options-container">
+                    <!-- Options will be dynamically inserted -->
+                </div>
+            </div>
+
+            <div class="quiz-navigation">
+                <button id="prev-btn" class="nav-btn" type="button" disabled>Previous</button>
+                <button id="next-btn" class="nav-btn" type="button">Next</button>
+                <button id="submit-btn" class="submit-btn hidden" type="button">Submit Quiz</button>
+            </div>
+        </section>
+
+        <!-- Results Screen -->
+        <section id="results-screen" class="screen">
+            <div class="results-container">
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="final-score">0</span>
+                        <span class="score-total">/ 10</span>
+                    </div>
+                    <h2 id="performance-message">Great Job!</h2>
+                    <p id="performance-description">You've completed the quiz.</p>
+                </div>
+
+                <div class="results-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Correct Answers</span>
+                        <span id="correct-count" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Wrong Answers</span>
+                        <span id="wrong-count" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Accuracy</span>
+                        <span id="accuracy" class="stat-value">0%</span>
+                    </div>
+                </div>
+
+                <div class="results-actions">
+                    <button id="review-btn" class="action-btn" type="button">Review Answers</button>
+                    <button id="home-btn" class="action-btn secondary" type="button">Back to Home</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Review Screen -->
+        <section id="review-screen" class="screen">
+            <div class="review-header">
+                <h2>Review Your Answers</h2>
+                <button id="back-to-results" class="back-btn" type="button">← Back to Results</button>
+            </div>
+            <div id="review-container" class="review-container">
+                <!-- Review items will be dynamically inserted -->
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
