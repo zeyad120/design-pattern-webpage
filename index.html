@@ -21,6 +21,7 @@
                     <span id="total-quizzes">Total Quizzes: 0</span>
                     <span id="average-score">Avg Score: 0%</span>
                 </div>
+                <button id="lectures-btn" class="lectures-btn" type="button">📚 Lectures</button>
                 <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">
                     <span class="theme-icon">🌙</span>
                 </button>
@@ -50,6 +51,44 @@
                         <span class="question-count">40 Questions</span>
                     </div>
                     <button class="start-btn" type="button">Start Quiz</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lectures Screen -->
+        <section id="lectures-screen" class="screen">
+            <div class="lectures-header">
+                <h2>📚 Course Lectures</h2>
+                <button id="back-to-home" class="back-btn" type="button">← Back to Home</button>
+            </div>
+
+            <!-- Lecture List View -->
+            <div id="lecture-list-view" class="lecture-list-view">
+                <div class="lectures-grid">
+                    <div class="lecture-item-card" data-lecture="1">
+                        <div class="lecture-item-icon">📖</div>
+                        <div class="lecture-item-content">
+                            <h3>Lecture 1</h3>
+                            <p>Introduction to Design Patterns</p>
+                        </div>
+                        <button class="view-lecture-btn" type="button">View →</button>
+                    </div>
+                    <div class="lecture-item-card" data-lecture="2">
+                        <div class="lecture-item-icon">🎯</div>
+                        <div class="lecture-item-content">
+                            <h3>Lecture 2</h3>
+                            <p>Object-Oriented Design Principles</p>
+                        </div>
+                        <button class="view-lecture-btn" type="button">View →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lecture Detail View -->
+            <div id="lecture-detail-view" class="lecture-detail-view hidden">
+                <button id="back-to-lecture-list" class="back-btn" type="button">← Back to Lectures</button>
+                <div id="lecture-detail-content" class="lecture-detail-content">
+                    <!-- Lecture content will be loaded here -->
                 </div>
             </div>
         </section>

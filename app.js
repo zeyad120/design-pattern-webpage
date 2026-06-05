@@ -510,6 +510,7 @@ let globalStats = {
 // DOM Elements
 const screens = {
     home: document.getElementById('home-screen'),
+    lectures: document.getElementById('lectures-screen'),
     quiz: document.getElementById('quiz-screen'),
     results: document.getElementById('results-screen'),
     review: document.getElementById('review-screen')
@@ -542,8 +543,15 @@ const elements = {
     reviewBtn: document.getElementById('review-btn'),
     homeBtn: document.getElementById('home-btn'),
     reviewContainer: document.getElementById('review-container'),
+    lecturesBtn: document.getElementById('lectures-btn'),
+    backToHome: document.getElementById('back-to-home'),
     backToResults: document.getElementById('back-to-results'),
-    incorrectPopup: document.getElementById('incorrect-popup')
+    incorrectPopup: document.getElementById('incorrect-popup'),
+    lectureItemCards: document.querySelectorAll('.lecture-item-card'),
+    backToLectureList: document.getElementById('back-to-lecture-list'),
+    lectureListView: document.getElementById('lecture-list-view'),
+    lectureDetailView: document.getElementById('lecture-detail-view'),
+    lectureDetailContent: document.getElementById('lecture-detail-content')
 };
 
 // Initialize
@@ -581,6 +589,23 @@ function updateGlobalStatsDisplay() {
 function setupEventListeners() {
     // Theme Toggle
     elements.themeToggle.addEventListener('click', toggleTheme);
+
+    // Lectures Button
+    elements.lecturesBtn.addEventListener('click', showLectures);
+
+    // Back to Home from Lectures
+    elements.backToHome.addEventListener('click', goHome);
+
+    // Lecture Item Cards
+    elements.lectureItemCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const lectureId = card.dataset.lecture;
+            showLectureDetailView(lectureId);
+        });
+    });
+
+    // Back to Lecture List
+    elements.backToLectureList.addEventListener('click', showLectureListView);
 
     // Category Cards
     elements.categoryCards.forEach(card => {
@@ -656,6 +681,567 @@ function showScreen(screenName) {
         screen.classList.remove('active');
     });
     screens[screenName].classList.add('active');
+}
+
+// Show Lectures Screen
+function showLectures() {
+    showScreen('lectures');
+    showLectureListView();
+}
+
+// Lecture Content Data
+const lectureContent = {
+    1: `
+        <div class="lecture-card">
+            <div class="lecture-header">
+                <span class="lecture-number">Lecture 1</span>
+                <h3>Introduction to Design Patterns</h3>
+            </div>
+            <div class="lecture-content">
+                <h4>أولًا: يعني إيه Design Pattern؟</h4>
+                <p>الـ Design Pattern هو حل مُجرَّب ومتكرر لمشكلة تصميم شائعة في البرمجيات.</p>
+                <p>ركز على كلمة:</p>
+                <ul>
+                    <li><strong>Design</strong> → تصميم البرنامج</li>
+                    <li><strong>Pattern</strong> → نمط أو طريقة متكررة</li>
+                </ul>
+                <p>يعني مش كود جاهز تنسخه، لكنه فكرة أو أسلوب تصميم تستخدمه لحل مشكلة معينة.</p>
+
+                <h4>مثال</h4>
+                <p>تخيل إنك كل مرة تعمل لعبة أو تطبيق وتحتاج تنشئ كائنات (Objects).</p>
+                <p>بدل ما كل مبرمج يخترع طريقة من الصفر، فيه Pattern اسمه Factory Method بيحل المشكلة دي بطريقة معروفة.</p>
+
+                <h4>لماذا نحتاج Design Patterns؟</h4>
+                <p>السؤال المهم:</p>
+                <p>ليه البرامج الكبيرة بتبقى صعبة التعديل بعد فترة؟</p>
+                <p>الإجابة:</p>
+                <ul>
+                    <li>الكود بيكبر جدًا</li>
+                    <li>أي تعديل يكسر حاجات تانية</li>
+                    <li>إضافة Feature جديدة تبقى صعبة</li>
+                    <li>المطور الجديد يفهم الكود بالعافية</li>
+                </ul>
+                <p>المشكلة مش في لغة البرمجة.</p>
+                <p>المشكلة في التصميم السيئ (Poor Design).</p>
+
+                <h4>مشاكل التصميم بدون Patterns</h4>
+                <h5>1) Tight Coupling</h5>
+                <p>يعني الكلاسات مرتبطة ببعض بشكل قوي جدًا.</p>
+                <p>مثال:</p>
+                <pre>class Car {
+    Engine engine;
+};</pre>
+                <p>لو غيرت Engine قد تحتاج تعدل Car أيضًا.</p>
+                <p>النتيجة:</p>
+                <p>تغيير صغير = مشاكل كثيرة.</p>
+
+                <h5>2) Low Reusability</h5>
+                <p>إعادة استخدام ضعيفة.</p>
+                <p>مثال:</p>
+                <p>نسخت نفس الكود في 5 ملفات مختلفة.</p>
+                <p>لو اكتشفت Bug لازم تصلحه في الخمسة.</p>
+
+                <h5>3) Rigidity</h5>
+                <p>النظام جامد وصعب التعديل.</p>
+                <p>إضافة خاصية بسيطة تحتاج تعديلات ضخمة.</p>
+
+                <h5>4) Fragility</h5>
+                <p>كل مرة تصلح مشكلة تظهر مشكلة جديدة.</p>
+                <p>زي لعبة تضغط Fix Bug فتطلع 3 Bugs جداد.</p>
+
+                <h5>5) God Object</h5>
+                <p>دي من أشهر المشاكل.</p>
+                <p>كلاس واحد مسؤول عن كل حاجة.</p>
+                <p>مثال:</p>
+                <pre>OrderProcessor
+├── PaymentProcessor
+├── InvoiceGenerator
+├── EmailSender
+├── DatabaseManager</pre>
+                <p>الكلاس ده:</p>
+                <ul>
+                    <li>بيحسب الفواتير</li>
+                    <li>بيبعت إيميل</li>
+                    <li>بيتعامل مع قاعدة البيانات</li>
+                    <li>بيستقبل الدفع</li>
+                </ul>
+                <p>وده مخالف لمبدأ:</p>
+                <p><strong>Single Responsibility Principle (SRP)</strong></p>
+                <p>لأن كل كلاس المفروض يكون له مسؤولية واحدة فقط.</p>
+
+                <h4>التعريف الرسمي للـ Design Pattern</h4>
+                <p>التعريف:</p>
+                <p>Reusable solution to a commonly occurring problem in software design.</p>
+                <p>يعني:</p>
+                <ul>
+                    <li><strong>Reusable</strong> - قابل لإعادة الاستخدام</li>
+                    <li><strong>Common Problem</strong> - مشكلة متكررة</li>
+                    <li><strong>Design Level</strong> - بيحل مشكلة تصميم (مش مشكلة Syntax)</li>
+                    <li><strong>Context Dependent</strong> - مش حل سحري لكل الحالات</li>
+                </ul>
+
+                <h4>Design Pattern ليست ماذا؟</h4>
+                <p>المحاضرة ركزت على نقطة مهمة جدًا.</p>
+                <h5>ليست Algorithm</h5>
+                <p>Algorithm = خطوات حل مشكلة حسابية.</p>
+                <p>مثال:</p>
+                <ul>
+                    <li>Binary Search</li>
+                    <li>Dijkstra</li>
+                </ul>
+                <p>أما Pattern فهو تصميم للنظام.</p>
+                <h5>ليست Code Snippet</h5>
+                <p>مش كود جاهز Copy/Paste.</p>
+                <h5>ليست Framework</h5>
+                <p>Framework مثل:</p>
+                <ul>
+                    <li>Spring</li>
+                    <li>Django</li>
+                    <li>Laravel</li>
+                </ul>
+                <p>Framework يعطيك هيكل جاهز.</p>
+                <p>Pattern مجرد فكرة.</p>
+                <h5>ليست Library</h5>
+                <p>Library مثل:</p>
+                <ul>
+                    <li>NumPy</li>
+                    <li>React</li>
+                </ul>
+                <p>Pattern مش مكتبة.</p>
+
+                <h4>التشبيه المهم في الامتحان</h4>
+                <p>المحاضرة جابت تشبيه ممتاز.</p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Concept</th>
+                            <th>Analogy</th>
+                        </tr>
+                        <tr>
+                            <td>Algorithm</td>
+                            <td>وصفة طبخ</td>
+                        </tr>
+                        <tr>
+                            <td>Design Pattern</td>
+                            <td>تصميم المطبخ</td>
+                        </tr>
+                        <tr>
+                            <td>Framework</td>
+                            <td>مطعم جاهز بالكامل</td>
+                        </tr>
+                        <tr>
+                            <td>Programming Language</td>
+                            <td>اللغة المستخدمة</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>احفظ الجدول ده كويس.</p>
+
+                <h4>تاريخ الـ Design Patterns</h4>
+                <p>البداية لم تكن في البرمجة</p>
+                <p>شخص اسمه:</p>
+                <p><strong>Christopher Alexander</strong></p>
+                <p>كان مهندس معماري سنة 1977.</p>
+                <p>فكرته:</p>
+                <p>المشاكل تتكرر، وبالتالي الحلول تتكرر أيضًا.</p>
+
+                <h4>Gang of Four (GoF)</h4>
+                <p>أشهر أربعة أشخاص في تاريخ الـ Design Patterns:</p>
+                <ul>
+                    <li>Erich Gamma</li>
+                    <li>Richard Helm</li>
+                    <li>Ralph Johnson</li>
+                    <li>John Vlissides</li>
+                </ul>
+                <p>أصدروا كتاب:</p>
+                <p><strong>Design Patterns: Elements of Reusable Object-Oriented Software</strong></p>
+                <p>عام 1994.</p>
+                <p>الكتاب عرف 23 Pattern مشهورة جدًا.</p>
+
+                <h4>الفلسفة الأساسية للـ Patterns</h4>
+                <h5>Design for Change</h5>
+                <p>أهم جملة في المحاضرة:</p>
+                <p><strong>The only constant in software is change.</strong></p>
+                <p>يعني:</p>
+                <ul>
+                    <li>البرامج دائمًا تتغير</li>
+                    <li>العميل يطلب تعديلات</li>
+                    <li>يظهر Features جديدة</li>
+                </ul>
+                <p>لذلك لازم نصمم النظام بحيث يتحمل التغيير.</p>
+
+                <h5>Experience Capture</h5>
+                <p>الـ Patterns عبارة عن خبرات مبرمجين كبار تم تجميعها.</p>
+                <p>بدل ما تقع في نفس الأخطاء، تستفيد من خبراتهم.</p>
+
+                <h4>مكونات أي Design Pattern</h4>
+                <p>أي Pattern تحتوي على:</p>
+                <ol>
+                    <li><strong>Name</strong> - اسم النمط (مثال: Observer, Strategy, Singleton)</li>
+                    <li><strong>Problem</strong> - المشكلة التي يحلها</li>
+                    <li><strong>Context</strong> - متى يُستخدم؟</li>
+                    <li><strong>Solution</strong> - الفكرة العامة للحل</li>
+                    <li><strong>Consequences</strong> - المميزات والعيوب</li>
+                </ol>
+
+                <h4>مثال Observer Pattern</h4>
+                <p>المشكلة:</p>
+                <p>عند تغير كائن معين نريد إبلاغ عدة كائنات أخرى.</p>
+                <p>مثال:</p>
+                <p>يوتيوب.</p>
+                <p>عندما يرفع اليوتيوبر فيديو:</p>
+                <ul>
+                    <li>أحمد يتلقى إشعار</li>
+                    <li>محمد يتلقى إشعار</li>
+                    <li>علي يتلقى إشعار</li>
+                </ul>
+                <p>هذا هو مفهوم Observer.</p>
+
+                <h4>فوائد استخدام Design Patterns</h4>
+                <h5>فوائد تقنية</h5>
+                <ul>
+                    <li>Loose Coupling</li>
+                    <li>High Cohesion</li>
+                    <li>Better Testability</li>
+                    <li>Scalability</li>
+                    <li>Clean Architecture</li>
+                </ul>
+                <p><strong>Loose Coupling</strong> - تقليل الاعتماد بين الكلاسات</p>
+                <p><strong>High Cohesion</strong> - كل كلاس مسؤول عن مهمة واضحة</p>
+                <p><strong>Better Testability</strong> - اختبار النظام أسهل</p>
+                <p><strong>Scalability</strong> - سهولة التوسع</p>
+
+                <h5>فوائد للفريق</h5>
+                <ul>
+                    <li>لغة مشتركة بين المطورين</li>
+                    <li>مناقشات أسرع</li>
+                    <li>فهم أسرع للكود</li>
+                    <li>تصميم موحد للمشاريع</li>
+                </ul>
+
+                <h4>أخطاء المبتدئين</h4>
+                <h5>Over Engineering</h5>
+                <p>غلط تفكر:</p>
+                <p>أي Pattern أستخدم؟</p>
+                <p>الصحيح:</p>
+                <p>هل أحتاج Pattern أصلًا؟</p>
+
+                <h5>Pattern Obsession</h5>
+                <p>إدمان استخدام Patterns.</p>
+                <p>مثال:</p>
+                <p>برنامج 200 سطر.</p>
+                <p>تستخدم فيه:</p>
+                <ul>
+                    <li>Factory</li>
+                    <li>Singleton</li>
+                    <li>Strategy</li>
+                    <li>Observer</li>
+                </ul>
+                <p>مع أن البرنامج بسيط جدًا.</p>
+                <p>النتيجة:</p>
+                <p>الكود يصبح أعقد من المشكلة نفسها.</p>
+
+                <h4>متى أستخدم Design Pattern؟</h4>
+                <p>استخدمها عندما:</p>
+                <ul>
+                    <li>✅ المشكلة تتكرر</li>
+                    <li>✅ النظام سيتطور مستقبلاً</li>
+                    <li>✅ تحتاج مرونة</li>
+                </ul>
+                <p>لا تستخدمها عندما:</p>
+                <ul>
+                    <li>❌ المشكلة بسيطة</li>
+                    <li>❌ المتطلبات ثابتة</li>
+                    <li>❌ تكلفة التعقيد أكبر من الفائدة</li>
+                </ul>
+
+                <h4>أهم نقاط الامتحان</h4>
+                <ul>
+                    <li>تعريف Design Pattern</li>
+                    <li>الفرق بين Pattern و Algorithm</li>
+                    <li>الفرق بين Pattern و Framework</li>
+                    <li>Tight Coupling</li>
+                    <li>God Object</li>
+                    <li>Gang of Four (GoF)</li>
+                    <li>Design for Change</li>
+                    <li>مكونات أي Pattern (Name, Problem, Context, Solution, Consequences)</li>
+                    <li>Benefits of Design Patterns</li>
+                    <li>Over Engineering و Pattern Obsession</li>
+                </ul>
+                <p>دي تقريبًا أهم الأفكار اللي غالبًا ييجي منها MCQ في الفصل الأول كله.</p>
+            </div>
+        </div>
+    `,
+    2: `
+        <div class="lecture-card">
+            <div class="lecture-header">
+                <span class="lecture-number">Lecture 2</span>
+                <h3>Object-Oriented Design Principles</h3>
+            </div>
+            <div class="lecture-content">
+                <h4>شرح المحاضرة</h4>
+
+                <h4>1. لماذا نحتاج Design Principles؟</h4>
+                <p>المشكلة إن البرنامج ممكن:</p>
+                <ul>
+                    <li>يشتغل صح اليوم</li>
+                    <li>لكنه يكون سيئ التصميم</li>
+                </ul>
+                <p>فتلاقيه:</p>
+                <ul>
+                    <li>صعب التعديل</li>
+                    <li>صعب الاختبار</li>
+                    <li>بيتكسر بسهولة عند أي تغيير</li>
+                </ul>
+
+                <p>الفكرة الأساسية:</p>
+                <p><strong>Good design absorbs change. Bad design amplifies change.</strong></p>
+                <p>يعني:</p>
+                <ul>
+                    <li>التصميم الجيد يستوعب التغييرات</li>
+                    <li>التصميم السيئ يجعل كل تعديل أصعب من السابق</li>
+                </ul>
+
+                <h4>2. SOLID Principles</h4>
+                <p>SOLID عبارة عن 5 مبادئ أساسية للتصميم الجيد.</p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Letter</th>
+                            <th>Principle</th>
+                        </tr>
+                        <tr>
+                            <td>S</td>
+                            <td>Single Responsibility</td>
+                        </tr>
+                        <tr>
+                            <td>O</td>
+                            <td>Open Closed</td>
+                        </tr>
+                        <tr>
+                            <td>L</td>
+                            <td>Liskov Substitution</td>
+                        </tr>
+                        <tr>
+                            <td>I</td>
+                            <td>Interface Segregation</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>Dependency Inversion</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h5>S — Single Responsibility Principle (SRP)</h5>
+                <h6>التعريف</h6>
+                <p>A class should have only one reason to change.</p>
+                <p>يعني:</p>
+                <p>كل Class يكون له مسؤولية واحدة فقط.</p>
+
+                <h6>مثال خطأ</h6>
+                <pre>InvoiceService
+├── calculateTotal()
+├── saveToDatabase()
+├── sendEmail()
+└── printInvoice()</pre>
+                <p>هنا الكلاس مسؤول عن:</p>
+                <ul>
+                    <li>الحساب</li>
+                    <li>قاعدة البيانات</li>
+                    <li>الإيميل</li>
+                    <li>الطباعة</li>
+                </ul>
+                <p>لو أي جزء تغير سنعدل نفس الكلاس.</p>
+
+                <h6>الحل</h6>
+                <p>نفصل المسؤوليات:</p>
+                <ul>
+                    <li>InvoiceCalculator</li>
+                    <li>InvoiceRepository</li>
+                    <li>EmailService</li>
+                    <li>PrintService</li>
+                </ul>
+
+                <h6>الفوائد</h6>
+                <ul>
+                    <li>أسهل اختبار</li>
+                    <li>إعادة استخدام</li>
+                    <li>تعديل مستقل لكل جزء</li>
+                </ul>
+
+                <h6>خطأ شائع</h6>
+                <p>SRP لا تعني:</p>
+                <ul>
+                    <li>Class صغير</li>
+                    <li>Method واحدة</li>
+                </ul>
+                <p>بل:</p>
+                <p><strong>One Axis of Change</strong></p>
+                <p>سبب واحد فقط للتغيير.</p>
+
+                <h5>O — Open Closed Principle (OCP)</h5>
+                <h6>التعريف</h6>
+                <p>Open for Extension, Closed for Modification</p>
+                <p>يعني:</p>
+                <ul>
+                    <li>نضيف سلوك جديد</li>
+                    <li>بدون تعديل الكود القديم</li>
+                </ul>
+
+                <h6>مثال سيئ</h6>
+                <pre>if(type==CREDIT)
+...
+else if(type==PAYPAL)
+...
+else if(type==BITCOIN)
+...</pre>
+                <p>كل Payment جديد يتطلب تعديل الكود.</p>
+
+                <h6>الحل</h6>
+                <pre>PaymentMethod
+├── CreditCardPayment
+├── PayPalPayment
+└── BitcoinPayment</pre>
+                <p>كل Payment Class منفصل.</p>
+
+                <h6>تحذير</h6>
+                <p>لا تعمل Abstractions كثيرة من البداية.</p>
+                <p>صمم للتغييرات المتوقعة وليس الخيالية.</p>
+
+                <h5>L — Liskov Substitution Principle (LSP)</h5>
+                <h6>التعريف</h6>
+                <p>أي Object من Subclass يجب أن يعمل مكان Parent Class بدون مشاكل.</p>
+
+                <h6>مثال مشهور</h6>
+                <pre>Rectangle
+    ↑
+Square</pre>
+                <p>المشكلة:</p>
+                <p>المستطيل يسمح:</p>
+                <p>Width != Height</p>
+                <p>أما المربع:</p>
+                <p>Width = Height</p>
+                <p>لذلك Square قد يكسر توقعات Rectangle.</p>
+
+                <h6>لماذا مهم؟</h6>
+                <p>مخالفته تسبب:</p>
+                <ul>
+                    <li>Hidden Bugs</li>
+                    <li>Broken Polymorphism</li>
+                    <li>Unexpected Behavior</li>
+                </ul>
+
+                <h6>قاعدة مهمة</h6>
+                <p>Inheritance means IS-A</p>
+                <p>وليس:</p>
+                <p>Similar To</p>
+
+                <h5>I — Interface Segregation Principle (ISP)</h5>
+                <h6>التعريف</h6>
+                <p>Clients should not depend on methods they don't use.</p>
+                <p>العميل لا يجب أن يُجبر على تنفيذ دوال لا يحتاجها.</p>
+
+                <h6>مثال سيئ</h6>
+                <pre>Machine
+├── print()
+├── scan()
+├── fax()</pre>
+                <p>طابعة قديمة تدعم Print فقط.</p>
+                <p>ستُجبر على تنفيذ Scan و Fax رغم عدم الحاجة لهما.</p>
+
+                <h6>الحل</h6>
+                <ul>
+                    <li>Printable</li>
+                    <li>Scannable</li>
+                    <li>Faxable</li>
+                </ul>
+                <p>Interfaces صغيرة ومتخصصة.</p>
+
+                <h6>الفوائد</h6>
+                <ul>
+                    <li>Coupling أقل</li>
+                    <li>Reuse أفضل</li>
+                    <li>عقود أوضح</li>
+                </ul>
+
+                <h5>D — Dependency Inversion Principle (DIP)</h5>
+                <h6>التعريف</h6>
+                <p>High-level modules should not depend on low-level modules. Both depend on abstractions.</p>
+
+                <h6>مثال سيئ</h6>
+                <pre>OrderService
+      ↓
+MySQLDatabase</pre>
+                <p>المشكلة:</p>
+                <ul>
+                    <li>صعب الاختبار</li>
+                    <li>صعب تغيير قاعدة البيانات</li>
+                </ul>
+
+                <h6>الحل</h6>
+                <pre>OrderService
+      ↓
+Database Interface
+     / \
+ MySQL Mongo</pre>
+
+                <h6>الفوائد</h6>
+                <ul>
+                    <li>Loose Coupling</li>
+                    <li>Easy Testing</li>
+                    <li>Dependency Injection</li>
+                </ul>
+
+                <h6>علاقة DIP بالـ Design Patterns</h6>
+                <p>أنماط تعتمد عليه:</p>
+                <ul>
+                    <li>Strategy</li>
+                    <li>Factory</li>
+                    <li>Observer</li>
+                    <li>Command</li>
+                </ul>
+
+                <h4>Beyond SOLID</h4>
+                <h5>High Cohesion</h5>
+                <p>الأشياء المرتبطة توضع معاً.</p>
+
+                <h5>Low Coupling</h5>
+                <p>تقليل الاعتماد بين المكونات.</p>
+
+                <h5>Composition Over Inheritance</h5>
+                <p>يفضل التركيب على الوراثة.</p>
+                <p>لأنه:</p>
+                <ul>
+                    <li>أكثر مرونة</li>
+                    <li>يدعم Runtime Changes</li>
+                </ul>
+
+                <h4>Design Smells</h4>
+                <p>علامات تدل على تصميم سيئ:</p>
+                <ul>
+                    <li>Long Methods</li>
+                    <li>Large Classes</li>
+                    <li>Deep Inheritance Trees</li>
+                    <li>Large If-Else Blocks</li>
+                    <li>Frequent Changes in Many Files</li>
+                </ul>
+            </div>
+        </div>
+    `
+};
+
+// Show Lecture List View
+function showLectureListView() {
+    elements.lectureListView.classList.remove('hidden');
+    elements.lectureDetailView.classList.add('hidden');
+}
+
+// Show Lecture Detail View
+function showLectureDetailView(lectureId) {
+    elements.lectureListView.classList.add('hidden');
+    elements.lectureDetailView.classList.remove('hidden');
+    elements.lectureDetailContent.innerHTML = lectureContent[lectureId];
 }
 
 // Start Quiz
