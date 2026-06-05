@@ -48,6 +48,35 @@ body {
     min-height: 100vh;
 }
 
+.incorrect-popup {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    background: linear-gradient(180deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+    color: white;
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.incorrect-popup.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.popup-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -130,6 +159,12 @@ header h1 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
+}
+
+@media (min-width: 1200px) {
+    .category-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 .category-card {
@@ -246,6 +281,102 @@ header h1 {
     font-size: 0.9rem;
 }
 
+.question-navigation-list {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.toggle-nav-btn {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.toggle-nav-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.toggle-nav-btn.expanded .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.question-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.question-grid.hidden {
+    display: none;
+}
+
+.question-nav-btn {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.question-nav-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.question-nav-btn.current {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+}
+
+.question-nav-btn.answered {
+    background: var(--bg-primary);
+    border-color: var(--border-color);
+}
+
+.question-nav-btn.correct {
+    background: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+}
+
+.question-nav-btn.incorrect {
+    background: var(--danger-color);
+    color: white;
+    border-color: var(--danger-color);
+}
+
 .question-container {
     background: var(--bg-card);
     padding: 2rem;
@@ -287,6 +418,22 @@ header h1 {
     background: var(--primary-color);
     color: white;
     border-color: var(--primary-color);
+}
+
+.option.correct {
+    background: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+}
+
+.option.incorrect {
+    background: var(--danger-color);
+    color: white;
+    border-color: var(--danger-color);
+}
+
+.option.answered {
+    pointer-events: none;
 }
 
 .option-letter {
@@ -548,7 +695,41 @@ header h1 {
     }
 
     .category-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    .category-card {
+        padding: 1.25rem;
+    }
+
+    .category-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .category-card p {
+        font-size: 0.8rem;
+        margin-bottom: 0.75rem;
+        line-height: 1.4;
+    }
+
+    .card-icon {
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-meta {
+        margin-bottom: 0.75rem;
+    }
+
+    .question-count {
+        font-size: 0.75rem;
+    }
+
+    .start-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
     }
 
     .quiz-header {

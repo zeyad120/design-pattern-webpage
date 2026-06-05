@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body data-theme="light">
+    <!-- Incorrect Answer Popup -->
+    <div id="incorrect-popup" class="incorrect-popup">
+        <span class="popup-text">غلط يا شاذ</span>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container">
@@ -27,12 +32,20 @@
     <main class="container">
         <!-- Home Screen -->
         <section id="home-screen" class="screen active">
-            <h2>Choose a Quiz Category</h2>
+            <h2>Choose a Fucking Quiz</h2>
             <div class="category-grid">
                 <div class="category-card" data-category="reasoning-agents">
                     <div class="card-icon">🤖</div>
-                    <h3>Reasoning and Agents</h3>
-                    <p>Explore AI agents, reasoning systems, and decision-making processes</p>
+                    <h3>Lecture 1: Introduction to Design Patterns</h3>
+                    <div class="card-meta">
+                        <span class="question-count">40 Questions</span>
+                    </div>
+                    <button class="start-btn" type="button">Start Quiz</button>
+                </div>
+
+                <div class="category-card" data-category="ood-principles">
+                    <div class="card-icon">🎯</div>
+                    <h3>Lecture 2: Object-Oriented Design Principles</h3>
                     <div class="card-meta">
                         <span class="question-count">40 Questions</span>
                     </div>
@@ -53,6 +66,16 @@
                     <div id="progress-fill" class="progress-fill"></div>
                 </div>
                 <span id="progress-text">Question 1 of 10</span>
+            </div>
+
+            <div class="question-navigation-list">
+                <button id="toggle-nav-btn" class="toggle-nav-btn" type="button">
+                    <span class="toggle-icon">▼</span>
+                    <span class="toggle-text">Show Question Navigator</span>
+                </button>
+                <div id="question-grid" class="question-grid hidden">
+                    <!-- Question buttons will be dynamically inserted -->
+                </div>
             </div>
 
             <div class="question-container">

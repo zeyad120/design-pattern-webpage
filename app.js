@@ -244,6 +244,251 @@ const quizDatabase = {
                 explanation: "You should NOT use a design pattern when the problem is simple and doesn't require the complexity that patterns introduce."
             }
         ]
+    },
+    "ood-principles": {
+        title: "Object-Oriented Design Principles Quiz",
+        questions: [
+            {
+                question: "What is the main goal of design principles?",
+                options: ["Increase code size", "Reduce future maintenance cost", "Eliminate testing", "Increase complexity"],
+                correctAnswer: 1,
+                explanation: "The main goal of design principles is to reduce future maintenance cost by creating flexible, maintainable code."
+            },
+            {
+                question: "Good design:",
+                options: ["Amplifies change", "Avoids change completely", "Absorbs change", "Prevents requirements"],
+                correctAnswer: 2,
+                explanation: "Good design absorbs change gracefully, allowing the system to adapt to new requirements without major rewrites."
+            },
+            {
+                question: "SOLID principles are:",
+                options: ["Programming languages", "Frameworks", "Design guidelines", "Databases"],
+                correctAnswer: 2,
+                explanation: "SOLID principles are design guidelines that help create more maintainable and scalable object-oriented software."
+            },
+            {
+                question: "Which principle corresponds to the letter S?",
+                options: ["Segregation", "Substitution", "Single Responsibility", "Security"],
+                correctAnswer: 2,
+                explanation: "The 'S' in SOLID stands for Single Responsibility Principle."
+            },
+            {
+                question: "SRP states that a class should have:",
+                options: ["One method", "One reason to change", "One variable", "One object"],
+                correctAnswer: 1,
+                explanation: "SRP states that a class should have one reason to change, meaning it should have only one responsibility."
+            },
+            {
+                question: "SRP is about:",
+                options: ["Class size", "Performance", "Responsibility", "Inheritance"],
+                correctAnswer: 2,
+                explanation: "SRP is about responsibility - ensuring each class has a single, well-defined responsibility."
+            },
+            {
+                question: "Which class violates SRP?",
+                options: ["InvoiceCalculator", "EmailService", "InvoiceService with calculation, email, DB, printing", "PrintService"],
+                correctAnswer: 2,
+                explanation: "InvoiceService with calculation, email, DB, and printing violates SRP because it has multiple reasons to change."
+            },
+            {
+                question: "Which is NOT a reason to change InvoiceService?",
+                options: ["Database changes", "Email format changes", "Business rule changes", "CPU speed changes"],
+                correctAnswer: 3,
+                explanation: "CPU speed changes are not a valid reason to change InvoiceService - this indicates poor separation of concerns."
+            },
+            {
+                question: "Applying SRP improves:",
+                options: ["Coupling", "Testing and reuse", "Complexity", "Bugs"],
+                correctAnswer: 1,
+                explanation: "Applying SRP improves testing and reuse by creating smaller, focused classes that are easier to test and reuse."
+            },
+            {
+                question: "SRP means:",
+                options: ["One method per class", "Tiny classes only", "One axis of change", "One variable per class"],
+                correctAnswer: 2,
+                explanation: "SRP means one axis of change - a class should change for only one reason."
+            },
+            {
+                question: "OCP stands for:",
+                options: ["Open-Closed Principle", "Object Creation Principle", "Object Control Principle", "Open Composition Principle"],
+                correctAnswer: 0,
+                explanation: "OCP stands for Open-Closed Principle."
+            },
+            {
+                question: "OCP states software should be:",
+                options: ["Open for modification only", "Closed for extension only", "Open for extension, closed for modification", "Closed for both"],
+                correctAnswer: 2,
+                explanation: "OCP states that software should be open for extension but closed for modification."
+            },
+            {
+                question: "A PaymentService using many if-else statements violates:",
+                options: ["SRP", "OCP", "ISP", "DIP"],
+                correctAnswer: 1,
+                explanation: "A PaymentService using many if-else statements violates OCP because you need to modify the class to add new payment methods."
+            },
+            {
+                question: "Adding PayPal support by modifying existing code violates:",
+                options: ["OCP", "LSP", "ISP", "SRP"],
+                correctAnswer: 0,
+                explanation: "Adding PayPal support by modifying existing code violates OCP - you should extend, not modify."
+            },
+            {
+                question: "Which technique helps apply OCP?",
+                options: ["Polymorphism", "Loops", "Recursion", "Arrays"],
+                correctAnswer: 0,
+                explanation: "Polymorphism helps apply OCP by allowing new behaviors to be added through new classes without modifying existing code."
+            },
+            {
+                question: "In OCP, new behavior should be added by:",
+                options: ["Editing old classes", "Deleting classes", "Creating new classes", "Rewriting everything"],
+                correctAnswer: 2,
+                explanation: "In OCP, new behavior should be added by creating new classes that extend the existing functionality."
+            },
+            {
+                question: "OCP misuse includes:",
+                options: ["Known variations", "Excessive early abstractions", "Interfaces", "Polymorphism"],
+                correctAnswer: 1,
+                explanation: "OCP misuse includes excessive early abstractions for variations that may never occur."
+            },
+            {
+                question: "LSP stands for:",
+                options: ["Low Separation Principle", "Liskov Substitution Principle", "Logical Structure Principle", "Layered System Principle"],
+                correctAnswer: 1,
+                explanation: "LSP stands for Liskov Substitution Principle."
+            },
+            {
+                question: "LSP requires:",
+                options: ["Subclasses replace parent classes safely", "Multiple inheritance", "Smaller classes", "Faster code"],
+                correctAnswer: 0,
+                explanation: "LSP requires that subclasses must be substitutable for their base classes without altering the correctness of the program."
+            },
+            {
+                question: "Which is the classic LSP violation?",
+                options: ["Observer Pattern", "Singleton Pattern", "Rectangle-Square Problem", "Factory Pattern"],
+                correctAnswer: 2,
+                explanation: "The Rectangle-Square Problem is the classic LSP violation - a Square cannot always substitute for a Rectangle."
+            },
+            {
+                question: "LSP violations may cause:",
+                options: ["Better reuse", "Hidden bugs", "Faster execution", "Better testing"],
+                correctAnswer: 1,
+                explanation: "LSP violations may cause hidden bugs when substituting subclasses breaks expected behavior."
+            },
+            {
+                question: "Inheritance should represent:",
+                options: ["Similar-to", "Has-a", "IS-A", "Uses-a"],
+                correctAnswer: 2,
+                explanation: "Inheritance should represent IS-A relationship - a subclass should truly be a type of its parent class."
+            },
+            {
+                question: "ISP stands for:",
+                options: ["Interface Segregation Principle", "Internal Structure Principle", "Inheritance Separation Principle", "Interface Security Principle"],
+                correctAnswer: 0,
+                explanation: "ISP stands for Interface Segregation Principle."
+            },
+            {
+                question: "ISP says clients should not:",
+                options: ["Use interfaces", "Depend on methods they don't use", "Create classes", "Use polymorphism"],
+                correctAnswer: 1,
+                explanation: "ISP states that clients should not depend on interfaces they don't use - they should have focused, role-specific interfaces."
+            },
+            {
+                question: "A printer forced to implement scan() violates:",
+                options: ["SRP", "OCP", "ISP", "DIP"],
+                correctAnswer: 2,
+                explanation: "A printer forced to implement scan() violates ISP because it depends on methods it doesn't use."
+            },
+            {
+                question: "Which is better according to ISP?",
+                options: ["One huge interface", "Several small interfaces", "No interfaces", "Static methods only"],
+                correctAnswer: 1,
+                explanation: "According to ISP, several small, focused interfaces are better than one large, bloated interface."
+            },
+            {
+                question: "Printable, Scannable, and Faxable demonstrate:",
+                options: ["SRP", "ISP", "LSP", "OCP"],
+                correctAnswer: 1,
+                explanation: "Printable, Scannable, and Faxable demonstrate ISP by segregating interfaces based on specific capabilities."
+            },
+            {
+                question: "ISP improves:",
+                options: ["Coupling", "Reuse and clean contracts", "Complexity", "Code duplication"],
+                correctAnswer: 1,
+                explanation: "ISP improves reuse and provides clean contracts by creating focused, purpose-specific interfaces."
+            },
+            {
+                question: "DIP stands for:",
+                options: ["Dependency Inversion Principle", "Data Integration Principle", "Design Improvement Principle", "Dependency Isolation Principle"],
+                correctAnswer: 0,
+                explanation: "DIP stands for Dependency Inversion Principle."
+            },
+            {
+                question: "DIP states high-level modules should depend on:",
+                options: ["Low-level modules", "Databases", "Abstractions", "Frameworks"],
+                correctAnswer: 2,
+                explanation: "DIP states that high-level modules should depend on abstractions, not on low-level modules."
+            },
+            {
+                question: "Which violates DIP?",
+                options: ["OrderService → Database Interface", "OrderService → MySQLDatabase directly", "Strategy Pattern", "Dependency Injection"],
+                correctAnswer: 1,
+                explanation: "OrderService → MySQLDatabase directly violates DIP because it depends on a concrete implementation."
+            },
+            {
+                question: "DIP promotes:",
+                options: ["Tight coupling", "Loose coupling", "Large classes", "Deep inheritance"],
+                correctAnswer: 1,
+                explanation: "DIP promotes loose coupling by depending on abstractions rather than concrete implementations."
+            },
+            {
+                question: "Which database can replace another easily under DIP?",
+                options: ["MySQL ↔ MongoDB through interface", "MySQL only", "MongoDB only", "None"],
+                correctAnswer: 0,
+                explanation: "Under DIP, MySQL and MongoDB can replace each other easily through a common interface."
+            },
+            {
+                question: "Which pattern relies on DIP?",
+                options: ["Strategy", "Factory", "Observer", "All of the above"],
+                correctAnswer: 3,
+                explanation: "Strategy, Factory, and Observer patterns all rely on DIP by depending on abstractions."
+            },
+            {
+                question: "High Cohesion means:",
+                options: ["Unrelated things together", "Related things belong together", "No classes", "More dependencies"],
+                correctAnswer: 1,
+                explanation: "High Cohesion means related things belong together - elements within a module should be strongly related."
+            },
+            {
+                question: "Low Coupling means:",
+                options: ["Maximum dependencies", "Minimal dependencies", "No objects", "No interfaces"],
+                correctAnswer: 1,
+                explanation: "Low Coupling means minimal dependencies - modules should be as independent as possible."
+            },
+            {
+                question: "Which is generally preferred?",
+                options: ["Inheritance over Composition", "Composition over Inheritance", "Neither", "Global Variables"],
+                correctAnswer: 1,
+                explanation: "Composition over Inheritance is generally preferred as it provides more flexibility and reduces coupling."
+            },
+            {
+                question: "A design smell is:",
+                options: ["Long methods", "Clean interfaces", "Low coupling", "High cohesion"],
+                correctAnswer: 0,
+                explanation: "Long methods are a design smell indicating potential issues with code organization and maintainability."
+            },
+            {
+                question: "Which is NOT a design smell?",
+                options: ["Large classes", "Deep inheritance trees", "High cohesion", "Large if-else blocks"],
+                correctAnswer: 2,
+                explanation: "High cohesion is NOT a design smell - it's actually a desirable characteristic of good design."
+            },
+            {
+                question: "Violating SOLID principles usually leads to:",
+                options: ["Flexible systems", "Fragile systems", "Better reuse", "Better maintainability"],
+                correctAnswer: 1,
+                explanation: "Violating SOLID principles usually leads to fragile systems that are difficult to maintain and extend."
+            }
+        ]
     }
 };
 
@@ -280,6 +525,9 @@ const elements = {
     quitBtn: document.getElementById('quit-btn'),
     progressFill: document.getElementById('progress-fill'),
     progressText: document.getElementById('progress-text'),
+    toggleNavBtn: document.getElementById('toggle-nav-btn'),
+    toggleText: document.querySelector('.toggle-text'),
+    questionGrid: document.getElementById('question-grid'),
     questionText: document.getElementById('question-text'),
     optionsContainer: document.getElementById('options-container'),
     prevBtn: document.getElementById('prev-btn'),
@@ -294,7 +542,8 @@ const elements = {
     reviewBtn: document.getElementById('review-btn'),
     homeBtn: document.getElementById('home-btn'),
     reviewContainer: document.getElementById('review-container'),
-    backToResults: document.getElementById('back-to-results')
+    backToResults: document.getElementById('back-to-results'),
+    incorrectPopup: document.getElementById('incorrect-popup')
 };
 
 // Initialize
@@ -303,6 +552,7 @@ function init() {
     updateGlobalStatsDisplay();
     setupEventListeners();
     loadTheme();
+    loadQuizState();
 }
 
 // Load Global Statistics from Local Storage
@@ -354,6 +604,9 @@ function setupEventListeners() {
     elements.backToResults.addEventListener('click', () => {
         showScreen('results');
     });
+
+    // Toggle Navigation Button
+    elements.toggleNavBtn.addEventListener('click', toggleQuestionNavigation);
 }
 
 // Toggle Theme
@@ -371,6 +624,30 @@ function loadTheme() {
     const savedTheme = localStorage.getItem('quizTheme') || 'light';
     document.body.dataset.theme = savedTheme;
     elements.themeIcon.textContent = savedTheme === 'light' ? '🌙' : '☀️';
+}
+
+// Save Quiz State to Local Storage
+function saveQuizState() {
+    localStorage.setItem('quizState', JSON.stringify(currentState));
+}
+
+// Load Quiz State from Local Storage
+function loadQuizState() {
+    const saved = localStorage.getItem('quizState');
+    if (saved) {
+        currentState = JSON.parse(saved);
+        // Restore quiz if it was in progress
+        if (currentState.currentCategory && !currentState.quizCompleted) {
+            elements.quizTitle.textContent = quizDatabase[currentState.currentCategory].title;
+            showScreen('quiz');
+            loadQuestion();
+        }
+    }
+}
+
+// Clear Quiz State from Local Storage
+function clearQuizState() {
+    localStorage.removeItem('quizState');
 }
 
 // Show Screen
@@ -396,6 +673,7 @@ function startQuiz(category) {
         score: 0
     };
 
+    saveQuizState();
     elements.quizTitle.textContent = quizDatabase[category].title;
     showScreen('quiz');
     loadQuestion();
@@ -413,11 +691,16 @@ function loadQuestion() {
     elements.progressFill.style.width = `${progress}%`;
     elements.progressText.textContent = `Question ${questionIndex + 1} of ${totalQuestions}`;
 
+    // Update question navigation grid
+    generateQuestionNavigation();
+
     // Update question text
     elements.questionText.textContent = question.question;
 
     // Update options
     elements.optionsContainer.innerHTML = '';
+    const isAnswered = currentState.userAnswers[questionIndex] !== null;
+    
     question.options.forEach((option, index) => {
         const optionElement = document.createElement('div');
         optionElement.className = 'option';
@@ -426,11 +709,23 @@ function loadQuestion() {
             <span class="option-text">${option}</span>
         `;
         
-        if (currentState.userAnswers[questionIndex] === index) {
-            optionElement.classList.add('selected');
+        if (isAnswered) {
+            // Question already answered - show result without allowing re-selection
+            if (index === question.correctAnswer) {
+                optionElement.classList.add('correct');
+            }
+            if (currentState.userAnswers[questionIndex] === index && index !== question.correctAnswer) {
+                optionElement.classList.add('incorrect');
+            }
+            optionElement.classList.add('answered');
+        } else {
+            // Question not answered yet - allow selection
+            if (currentState.userAnswers[questionIndex] === index) {
+                optionElement.classList.add('selected');
+            }
+            optionElement.addEventListener('click', () => selectOption(index));
         }
-
-        optionElement.addEventListener('click', () => selectOption(index));
+        
         elements.optionsContainer.appendChild(optionElement);
     });
 
@@ -446,21 +741,115 @@ function loadQuestion() {
     }
 }
 
+// Generate Question Navigation
+function generateQuestionNavigation() {
+    const category = currentState.currentCategory;
+    const totalQuestions = quizDatabase[category].questions.length;
+    const currentQuestionIndex = currentState.currentQuestionIndex;
+
+    elements.questionGrid.innerHTML = '';
+
+    for (let i = 0; i < totalQuestions; i++) {
+        const button = document.createElement('button');
+        button.className = 'question-nav-btn';
+        button.textContent = i + 1;
+        button.dataset.questionIndex = i;
+
+        // Mark current question
+        if (i === currentQuestionIndex) {
+            button.classList.add('current');
+        }
+
+        // Mark answered questions
+        if (currentState.userAnswers[i] !== null) {
+            button.classList.add('answered');
+            const question = quizDatabase[category].questions[i];
+            if (currentState.userAnswers[i] === question.correctAnswer) {
+                button.classList.add('correct');
+            } else {
+                button.classList.add('incorrect');
+            }
+        }
+
+        button.addEventListener('click', () => jumpToQuestion(i));
+        elements.questionGrid.appendChild(button);
+    }
+}
+
+// Jump to Question
+function jumpToQuestion(index) {
+    currentState.currentQuestionIndex = index;
+    saveQuizState();
+    loadQuestion();
+}
+
+// Toggle Question Navigation
+function toggleQuestionNavigation() {
+    elements.questionGrid.classList.toggle('hidden');
+    elements.toggleNavBtn.classList.toggle('expanded');
+
+    if (elements.questionGrid.classList.contains('hidden')) {
+        elements.toggleText.textContent = 'Show Question Navigator';
+    } else {
+        elements.toggleText.textContent = 'Hide Question Navigator';
+    }
+}
+
 // Select Option
 function selectOption(index) {
-    currentState.userAnswers[currentState.currentQuestionIndex] = index;
-    
-    // Update visual selection
+    const category = currentState.currentCategory;
+    const questionIndex = currentState.currentQuestionIndex;
+    const question = quizDatabase[category].questions[questionIndex];
+
+    currentState.userAnswers[questionIndex] = index;
+    saveQuizState();
+
+    // Show popup if answer is incorrect
+    if (index !== question.correctAnswer) {
+        showIncorrectPopup();
+    }
+
+    // Update visual selection and show immediate feedback
     const options = elements.optionsContainer.querySelectorAll('.option');
     options.forEach((option, i) => {
-        option.classList.toggle('selected', i === index);
+        // Remove all feedback classes first
+        option.classList.remove('selected', 'correct', 'incorrect', 'answered');
+
+        if (i === index) {
+            // Show if selected answer is correct or incorrect
+            if (i === question.correctAnswer) {
+                option.classList.add('correct');
+            } else {
+                option.classList.add('incorrect');
+            }
+        }
+
+        // Always show the correct answer
+        if (i === question.correctAnswer) {
+            option.classList.add('correct');
+        }
+
+        // Mark all options as answered to prevent re-selection
+        option.classList.add('answered');
     });
+
+    // Update question navigation to show answer status
+    generateQuestionNavigation();
+}
+
+// Show Incorrect Popup
+function showIncorrectPopup() {
+    elements.incorrectPopup.classList.add('show');
+    setTimeout(() => {
+        elements.incorrectPopup.classList.remove('show');
+    }, 2000);
 }
 
 // Next Question
 function nextQuestion() {
     if (currentState.currentQuestionIndex < quizDatabase[currentState.currentCategory].questions.length - 1) {
         currentState.currentQuestionIndex++;
+        saveQuizState();
         loadQuestion();
     }
 }
@@ -469,6 +858,7 @@ function nextQuestion() {
 function previousQuestion() {
     if (currentState.currentQuestionIndex > 0) {
         currentState.currentQuestionIndex--;
+        saveQuizState();
         loadQuestion();
     }
 }
@@ -477,7 +867,7 @@ function previousQuestion() {
 function submitQuiz() {
     const category = currentState.currentCategory;
     const questions = quizDatabase[category].questions;
-    
+
     let correctAnswers = 0;
     questions.forEach((question, index) => {
         if (currentState.userAnswers[index] === question.correctAnswer) {
@@ -487,6 +877,7 @@ function submitQuiz() {
 
     currentState.score = correctAnswers;
     currentState.quizCompleted = true;
+    saveQuizState();
 
     // Update global statistics
     globalStats.totalQuizzes++;
@@ -568,6 +959,7 @@ function showReview() {
 // Quit Quiz
 function quitQuiz() {
     if (confirm('Are you sure you want to quit? Your progress will be lost.')) {
+        clearQuizState();
         goHome();
     }
 }
@@ -581,6 +973,7 @@ function goHome() {
         quizCompleted: false,
         score: 0
     };
+    clearQuizState();
     showScreen('home');
 }
 
