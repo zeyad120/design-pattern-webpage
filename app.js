@@ -489,6 +489,251 @@ const quizDatabase = {
                 explanation: "Violating SOLID principles usually leads to fragile systems that are difficult to maintain and extend."
             }
         ]
+    },
+    "classification-patterns": {
+        title: "Lecture 3: Classification of Design Patterns",
+        questions: [
+            {
+                question: "Why do we classify design patterns?",
+                options: ["To increase complexity", "To organize knowledge and simplify selection", "To replace OOP", "To improve hardware"],
+                correctAnswer: 1,
+                explanation: "We classify design patterns to organize knowledge, simplify selection, understand the purpose of each pattern, and avoid incorrect usage."
+            },
+            {
+                question: "Without classification, developers may:",
+                options: ["Choose patterns correctly", "Memorize patterns easily", "Apply patterns randomly", "Write less code"],
+                correctAnswer: 2,
+                explanation: "Without classification, developers may apply patterns randomly without understanding their purpose or when to use them."
+            },
+            {
+                question: "Classification helps developers:",
+                options: ["Avoid learning patterns", "Quickly narrow choices", "Remove abstractions", "Reduce inheritance"],
+                correctAnswer: 1,
+                explanation: "Classification helps developers quickly narrow down choices by organizing patterns by their purpose and intent."
+            },
+            {
+                question: "Design patterns should be chosen by:",
+                options: ["Name", "Popularity", "Intent", "Complexity"],
+                correctAnswer: 2,
+                explanation: "Design patterns should be chosen by intent (the problem they solve), not by name, popularity, or complexity."
+            },
+            {
+                question: "The GoF classifies patterns into:",
+                options: ["2 categories", "3 categories", "4 categories", "5 categories"],
+                correctAnswer: 1,
+                explanation: "The Gang of Four classifies patterns into 3 categories: Creational, Structural, and Behavioral."
+            },
+            {
+                question: "Which category focuses on object creation?",
+                options: ["Structural", "Behavioral", "Creational", "Architectural"],
+                correctAnswer: 2,
+                explanation: "Creational patterns focus on object creation and answer the question: How are objects created?"
+            },
+            {
+                question: "Which category focuses on object composition?",
+                options: ["Behavioral", "Structural", "Creational", "Functional"],
+                correctAnswer: 1,
+                explanation: "Structural patterns focus on object composition and answer the question: How are objects combined?"
+            },
+            {
+                question: "Which category focuses on object interaction?",
+                options: ["Behavioral", "Structural", "Creational", "Logical"],
+                correctAnswer: 0,
+                explanation: "Behavioral patterns focus on object interaction and answer the question: How do objects communicate?"
+            },
+            {
+                question: "The main question for Creational patterns is:",
+                options: ["How do objects communicate?", "How are objects combined?", "How are objects created?", "How are objects tested?"],
+                correctAnswer: 2,
+                explanation: "The main question for Creational patterns is: How are objects created?"
+            },
+            {
+                question: "The main question for Structural patterns is:",
+                options: ["How are classes/objects combined?", "How are objects created?", "How are objects deleted?", "How are objects stored?"],
+                correctAnswer: 0,
+                explanation: "The main question for Structural patterns is: How are classes/objects combined?"
+            },
+            {
+                question: "The main question for Behavioral patterns is:",
+                options: ["How are objects inherited?", "How do objects communicate?", "How are objects created?", "How are objects deployed?"],
+                correctAnswer: 1,
+                explanation: "The main question for Behavioral patterns is: How do objects communicate?"
+            },
+            {
+                question: "Creational patterns aim to:",
+                options: ["Reduce coupling to concrete classes", "Increase inheritance", "Increase complexity", "Eliminate objects"],
+                correctAnswer: 0,
+                explanation: "Creational patterns aim to reduce coupling to concrete classes by abstracting object creation logic."
+            },
+            {
+                question: "Which is a common problem solved by Creational patterns?",
+                options: ["Incompatible interfaces", "Complex object creation logic", "State transitions", "Communication issues"],
+                correctAnswer: 1,
+                explanation: "Creational patterns solve problems like complex object creation logic, excessive use of new, and the need to create families of objects."
+            },
+            {
+                question: "Which is NOT a Creational pattern?",
+                options: ["Builder", "Prototype", "Decorator", "Singleton"],
+                correctAnswer: 2,
+                explanation: "Decorator is a Structural pattern, not a Creational pattern. Creational patterns include Singleton, Factory Method, Abstract Factory, Builder, and Prototype."
+            },
+            {
+                question: "Which is a Creational pattern?",
+                options: ["Factory Method", "Observer", "Proxy", "Strategy"],
+                correctAnswer: 0,
+                explanation: "Factory Method is a Creational pattern. Observer, Proxy, and Strategy are not Creational patterns."
+            },
+            {
+                question: "Which is a Creational pattern?",
+                options: ["Adapter", "Abstract Factory", "State", "Facade"],
+                correctAnswer: 1,
+                explanation: "Abstract Factory is a Creational pattern. Adapter, State, and Facade are not Creational patterns."
+            },
+            {
+                question: "Creational patterns are useful when:",
+                options: ["Object creation logic is complex", "Inheritance is enough", "No flexibility is needed", "Classes never change"],
+                correctAnswer: 0,
+                explanation: "Creational patterns are useful when object creation logic is complex, you want to hide concrete classes, or you expect changes in creation methods."
+            },
+            {
+                question: "Structural patterns help:",
+                options: ["Compose classes and objects", "Create objects", "Delete objects", "Manage databases"],
+                correctAnswer: 0,
+                explanation: "Structural patterns help compose classes and objects into larger structures while keeping flexibility."
+            },
+            {
+                question: "Which is a common Structural problem?",
+                options: ["Complex object creation", "Incompatible interfaces", "State-driven behavior", "Communication protocols"],
+                correctAnswer: 1,
+                explanation: "Common Structural problems include incompatible interfaces, large monolithic classes, rigid inheritance, and dynamic addition of responsibilities."
+            },
+            {
+                question: "Which is NOT a Structural pattern?",
+                options: ["Adapter", "Bridge", "Observer", "Proxy"],
+                correctAnswer: 2,
+                explanation: "Observer is a Behavioral pattern, not a Structural pattern. Structural patterns include Adapter, Bridge, Composite, Decorator, Facade, Flyweight, and Proxy."
+            },
+            {
+                question: "Which Structural pattern changes an interface?",
+                options: ["Decorator", "Adapter", "Observer", "Builder"],
+                correctAnswer: 1,
+                explanation: "Adapter changes an interface to make incompatible classes work together."
+            },
+            {
+                question: "Which Structural pattern adds behavior?",
+                options: ["Adapter", "Facade", "Decorator", "Proxy"],
+                correctAnswer: 2,
+                explanation: "Decorator adds behavior dynamically to objects without changing their class."
+            },
+            {
+                question: "Which Structural pattern simplifies a subsystem?",
+                options: ["Facade", "State", "Builder", "Strategy"],
+                correctAnswer: 0,
+                explanation: "Facade provides a simplified interface to a complex subsystem."
+            },
+            {
+                question: "Structural patterns are useful when:",
+                options: ["Integrating third-party code", "Creating families of objects", "Managing states", "Replacing algorithms"],
+                correctAnswer: 0,
+                explanation: "Structural patterns are useful when integrating third-party code, merging behaviors, or creating flexible relationships between classes."
+            },
+            {
+                question: "Behavioral patterns focus on:",
+                options: ["Object communication", "Object creation", "Database access", "Hardware interaction"],
+                correctAnswer: 0,
+                explanation: "Behavioral patterns focus on object communication and how objects interact with each other."
+            },
+            {
+                question: "Behavioral patterns help reduce:",
+                options: ["Memory usage", "Communication coupling", "CPU load", "Storage requirements"],
+                correctAnswer: 1,
+                explanation: "Behavioral patterns help reduce communication coupling between objects."
+            },
+            {
+                question: "Which is NOT a Behavioral pattern?",
+                options: ["Strategy", "Observer", "Command", "Builder"],
+                correctAnswer: 3,
+                explanation: "Builder is a Creational pattern, not a Behavioral pattern. Behavioral patterns include Strategy, Observer, Command, State, Template Method, Iterator, Mediator, Memento, Chain of Responsibility, Visitor, and Interpreter."
+            },
+            {
+                question: "Which pattern belongs to Behavioral category?",
+                options: ["State", "Proxy", "Builder", "Adapter"],
+                correctAnswer: 0,
+                explanation: "State is a Behavioral pattern. Proxy is Structural, Builder is Creational, and Adapter is Structural."
+            },
+            {
+                question: "Which pattern belongs to Behavioral category?",
+                options: ["Abstract Factory", "Observer", "Decorator", "Facade"],
+                correctAnswer: 1,
+                explanation: "Observer is a Behavioral pattern. Abstract Factory is Creational, Decorator is Structural, and Facade is Structural."
+            },
+            {
+                question: "Behavioral patterns help replace:",
+                options: ["Classes", "Constructors", "Complex if-else logic", "Interfaces"],
+                correctAnswer: 2,
+                explanation: "Behavioral patterns help replace complex if-else logic with more flexible and maintainable structures."
+            },
+            {
+                question: "In the comparison table, Creational patterns focus on:",
+                options: ["Interaction", "Composition", "Creation", "Inheritance"],
+                correctAnswer: 2,
+                explanation: "In the comparison table, Creational patterns focus on Creation."
+            },
+            {
+                question: "In the comparison table, Structural patterns focus on:",
+                options: ["Creation", "Composition", "Interaction", "Communication"],
+                correctAnswer: 1,
+                explanation: "In the comparison table, Structural patterns focus on Composition."
+            },
+            {
+                question: "In the comparison table, Behavioral patterns focus on:",
+                options: ["Interaction", "Creation", "Composition", "Construction"],
+                correctAnswer: 0,
+                explanation: "In the comparison table, Behavioral patterns focus on Interaction."
+            },
+            {
+                question: "Factory Method creates:",
+                options: ["Families of products", "One product", "Object communication", "Dynamic behavior"],
+                correctAnswer: 1,
+                explanation: "Factory Method creates one product at a time."
+            },
+            {
+                question: "Abstract Factory creates:",
+                options: ["One product", "One method", "Families of products", "One interface"],
+                correctAnswer: 2,
+                explanation: "Abstract Factory creates families of related products."
+            },
+            {
+                question: "Factory Method mainly uses:",
+                options: ["Composition", "Delegation", "Inheritance", "Aggregation"],
+                correctAnswer: 2,
+                explanation: "Factory Method mainly uses inheritance to create objects."
+            },
+            {
+                question: "Abstract Factory mainly uses:",
+                options: ["Composition", "Inheritance", "Recursion", "Delegation"],
+                correctAnswer: 0,
+                explanation: "Abstract Factory mainly uses composition to create families of products."
+            },
+            {
+                question: "In Strategy pattern:",
+                options: ["Object decides behavior", "Client decides algorithm", "Interface changes", "Behavior is added dynamically"],
+                correctAnswer: 1,
+                explanation: "In Strategy pattern, the client decides which algorithm to use."
+            },
+            {
+                question: "In State pattern:",
+                options: ["Client decides behavior", "Object decides behavior based on state", "Interface changes", "Families are created"],
+                correctAnswer: 1,
+                explanation: "In State pattern, the object decides its behavior based on its internal state."
+            },
+            {
+                question: "Design patterns are:",
+                options: ["Replacements for SOLID principles", "Applications of design principles", "Programming languages", "Testing frameworks"],
+                correctAnswer: 1,
+                explanation: "Design patterns are applications of design principles, providing concrete solutions that implement principles like SOLID."
+            }
+        ]
     }
 };
 
@@ -1225,6 +1470,320 @@ Database Interface
                     <li>Deep Inheritance Trees</li>
                     <li>Large If-Else Blocks</li>
                     <li>Frequent Changes in Many Files</li>
+                </ul>
+            </div>
+        </div>
+    `,
+    3: `
+        <div class="lecture-card">
+            <div class="lecture-header">
+                <span class="lecture-number">Lecture 3</span>
+                <h3>Classification of Design Patterns</h3>
+            </div>
+            <div class="lecture-content">
+                <h4>لماذا نصنف Design Patterns؟</h4>
+                <p>تخيل تحفظ 23 Pattern بدون أي تنظيم.</p>
+                <p>المشاكل:</p>
+                <ul>
+                    <li>صعب تتذكرها.</li>
+                    <li>صعب تختار المناسب.</li>
+                    <li>هتستخدم Patterns بشكل عشوائي.</li>
+                </ul>
+                <p>لذلك التصنيف يساعد على:</p>
+                <ul>
+                    <li>تنظيم المعرفة.</li>
+                    <li>تضييق الاختيارات بسرعة.</li>
+                    <li>فهم الهدف من النمط.</li>
+                    <li>تجنب الاستخدام الخاطئ.</li>
+                </ul>
+
+                <h4>Choose patterns by intent, not by name.</h4>
+                <p>اختار الـ Pattern بناءً على المشكلة التي يحلها وليس اسمه.</p>
+
+                <h4>تصنيف GoF</h4>
+                <p>كتاب Gang of Four قسم الـ Patterns إلى 3 فئات رئيسية:</p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Category</th>
+                            <th>Focus</th>
+                            <th>Main Question</th>
+                        </tr>
+                        <tr>
+                            <td>Creational</td>
+                            <td>Object Creation</td>
+                            <td>How are objects created?</td>
+                        </tr>
+                        <tr>
+                            <td>Structural</td>
+                            <td>Object Composition</td>
+                            <td>How are objects combined?</td>
+                        </tr>
+                        <tr>
+                            <td>Behavioral</td>
+                            <td>Object Interaction</td>
+                            <td>How do objects communicate?</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>1. Creational Patterns</h4>
+                <h5>الفكرة</h5>
+                <p>تهتم بإنشاء الـ Objects.</p>
+                <p>وتجيب على سؤال:</p>
+                <p><strong>How are objects created?</strong></p>
+
+                <h5>أهدافها</h5>
+                <ul>
+                    <li>تقليل Coupling.</li>
+                    <li>التحكم في إنشاء Objects.</li>
+                    <li>زيادة المرونة.</li>
+                </ul>
+
+                <h5>مشاكل تحلها</h5>
+                <ul>
+                    <li>منطق إنشاء الكائنات معقد.</li>
+                    <li>استخدام new بكثرة.</li>
+                    <li>كثرة Constructor Parameters.</li>
+                    <li>الحاجة لإنشاء Families من Objects.</li>
+                </ul>
+
+                <h5>الأنماط الموجودة</h5>
+                <ul>
+                    <li>Singleton</li>
+                    <li>Factory Method</li>
+                    <li>Abstract Factory</li>
+                    <li>Builder</li>
+                    <li>Prototype</li>
+                </ul>
+
+                <h5>متى تستخدمها؟</h5>
+                <p>استخدمها عندما:</p>
+                <ul>
+                    <li>Object creation logic معقد.</li>
+                    <li>تريد إخفاء Concrete Classes.</li>
+                    <li>تتوقع تغيير طريقة الإنشاء مستقبلاً.</li>
+                </ul>
+
+                <h5>متى لا تستخدمها؟</h5>
+                <p>عندما يكون:</p>
+                <ul>
+                    <li>إنشاء الكائن بسيط.</li>
+                    <li>الـ Overhead غير مبرر.</li>
+                </ul>
+
+                <h4>2. Structural Patterns</h4>
+                <h5>الفكرة</h5>
+                <p>تركز على:</p>
+                <p>كيف نركب Classes و Objects مع بعض؟</p>
+
+                <h5>تساعد في</h5>
+                <ul>
+                    <li>دمج Objects.</li>
+                    <li>توسيع السلوك.</li>
+                    <li>التكيف مع Interfaces مختلفة.</li>
+                </ul>
+
+                <h5>مشاكل تحلها</h5>
+                <ul>
+                    <li>Incompatible Interfaces.</li>
+                    <li>Large Monolithic Classes.</li>
+                    <li>Rigid Inheritance.</li>
+                    <li>إضافة Responsibilities ديناميكيًا.</li>
+                </ul>
+
+                <h5>الأنماط الموجودة</h5>
+                <ul>
+                    <li>Adapter</li>
+                    <li>Bridge</li>
+                    <li>Composite</li>
+                    <li>Decorator</li>
+                    <li>Facade</li>
+                    <li>Flyweight</li>
+                    <li>Proxy</li>
+                </ul>
+
+                <h5>متى تستخدمها؟</h5>
+                <ul>
+                    <li>دمج Behaviors.</li>
+                    <li>علاقات مرنة بين Classes.</li>
+                    <li>دمج Legacy أو Third-Party Code.</li>
+                </ul>
+
+                <h5>متى لا تستخدمها؟</h5>
+                <p>عندما يكون:</p>
+                <ul>
+                    <li>Inheritance العادي كافي.</li>
+                    <li>لا توجد Structural Complexity.</li>
+                </ul>
+
+                <h4>3. Behavioral Patterns</h4>
+                <h5>الفكرة</h5>
+                <p>تركز على:</p>
+                <p>كيف تتواصل Objects مع بعضها؟</p>
+
+                <h5>تساعد في</h5>
+                <ul>
+                    <li>تقليل Coupling.</li>
+                    <li>تبسيط التفاعلات.</li>
+                    <li>استبدال if-else المعقدة.</li>
+                </ul>
+
+                <h5>مشاكل تحلها</h5>
+                <ul>
+                    <li>Complex if-else.</li>
+                    <li>Tight Coupling.</li>
+                    <li>Hard-to-change behavior.</li>
+                    <li>State-dependent behavior.</li>
+                </ul>
+
+                <h5>الأنماط الموجودة</h5>
+                <ul>
+                    <li>Strategy</li>
+                    <li>Observer</li>
+                    <li>Command</li>
+                    <li>State</li>
+                    <li>Template Method</li>
+                    <li>Iterator</li>
+                    <li>Mediator</li>
+                    <li>Memento</li>
+                    <li>Chain of Responsibility</li>
+                    <li>Visitor</li>
+                    <li>Interpreter</li>
+                </ul>
+
+                <h4>مقارنة بين الفئات الثلاث</h4>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Creational</th>
+                            <th>Structural</th>
+                            <th>Behavioral</th>
+                        </tr>
+                        <tr>
+                            <td>Focus</td>
+                            <td>Object Creation</td>
+                            <td>Composition</td>
+                            <td>Interaction</td>
+                        </tr>
+                        <tr>
+                            <td>Mechanism</td>
+                            <td>Abstraction</td>
+                            <td>Composition</td>
+                            <td>Delegation</td>
+                        </tr>
+                        <tr>
+                            <td>Benefit</td>
+                            <td>Flexibility</td>
+                            <td>Reusability</td>
+                            <td>Maintainability</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>أسئلة الدكتور يحبها</h4>
+                <h5>Factory Method vs Abstract Factory</h5>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Factory Method</th>
+                            <th>Abstract Factory</th>
+                        </tr>
+                        <tr>
+                            <td>Creates One Product</td>
+                            <td>Creates Families</td>
+                        </tr>
+                        <tr>
+                            <td>Uses Inheritance</td>
+                            <td>Uses Composition</td>
+                        </tr>
+                        <tr>
+                            <td>Simpler</td>
+                            <td>More Complex</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h5>Adapter vs Decorator</h5>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Adapter</th>
+                            <th>Decorator</th>
+                        </tr>
+                        <tr>
+                            <td>Changes Interface</td>
+                            <td>Adds Behavior</td>
+                        </tr>
+                        <tr>
+                            <td>Integration</td>
+                            <td>Enhancement</td>
+                        </tr>
+                        <tr>
+                            <td>One-time</td>
+                            <td>Stackable</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h5>Strategy vs State</h5>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Strategy</th>
+                            <th>State</th>
+                        </tr>
+                        <tr>
+                            <td>Algorithm Selection</td>
+                            <td>State-driven Behavior</td>
+                        </tr>
+                        <tr>
+                            <td>Client Decides</td>
+                            <td>Object Decides</td>
+                        </tr>
+                        <tr>
+                            <td>External Variation</td>
+                            <td>Internal Variation</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>علاقة التصنيف بـ SOLID</h4>
+                <h5>Creational</h5>
+                <p>يرتبط بـ:</p>
+                <ul>
+                    <li>DIP</li>
+                    <li>OCP</li>
+                </ul>
+
+                <h5>Structural</h5>
+                <p>يرتبط بـ:</p>
+                <ul>
+                    <li>OCP</li>
+                    <li>SRP</li>
+                </ul>
+
+                <h5>Behavioral</h5>
+                <p>يرتبط بـ:</p>
+                <ul>
+                    <li>SRP</li>
+                    <li>OCP</li>
+                    <li>LSP</li>
+                </ul>
+
+                <h4>أهم نقاط الفاينال</h4>
+                <ul>
+                    <li>لماذا نصنف Design Patterns؟</li>
+                    <li>الفئات الثلاث لـ GoF.</li>
+                    <li>Purpose of Creational Patterns.</li>
+                    <li>Purpose of Structural Patterns.</li>
+                    <li>Purpose of Behavioral Patterns.</li>
+                    <li>قائمة Patterns لكل فئة.</li>
+                    <li>Factory Method vs Abstract Factory.</li>
+                    <li>Adapter vs Decorator.</li>
+                    <li>Strategy vs State.</li>
+                    <li>Relationship between SOLID and Pattern Categories.</li>
                 </ul>
             </div>
         </div>
