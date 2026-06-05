@@ -236,6 +236,11 @@ header h1 {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
+    position: sticky;
+    top: 0;
+    background: var(--bg-primary);
+    padding: 1rem 0;
+    z-index: 100;
 }
 
 .quiz-header h2 {
