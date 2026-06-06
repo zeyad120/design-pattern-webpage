@@ -979,6 +979,251 @@ const quizDatabase = {
                 explanation: "The final recommendation of the lecture is to prefer Dependency Injection in modern systems."
             }
         ]
+    },
+    "factory-method-pattern": {
+        title: "Lecture 5: Factory Method Pattern",
+        questions: [
+            {
+                question: "Factory Method Pattern belongs to which category?",
+                options: ["Structural", "Behavioral", "Creational", "Architectural"],
+                correctAnswer: 2,
+                explanation: "Factory Method Pattern belongs to the Creational category as it deals with object creation."
+            },
+            {
+                question: "Factory Method mainly deals with:",
+                options: ["Object communication", "Object creation", "Object deletion", "Object testing"],
+                correctAnswer: 1,
+                explanation: "Factory Method mainly deals with object creation, delegating the instantiation process to subclasses."
+            },
+            {
+                question: "What problem does Factory Method solve?",
+                options: ["Memory leaks", "Tight coupling caused by direct object creation", "Slow execution", "Database errors"],
+                correctAnswer: 1,
+                explanation: "Factory Method solves the problem of tight coupling caused by direct object creation with the 'new' keyword."
+            },
+            {
+                question: "Which statement creates tight coupling?",
+                options: ["createProduct()", "getInstance()", "new CreditCardPayment()", "pay()"],
+                correctAnswer: 2,
+                explanation: "Using 'new CreditCardPayment()' creates tight coupling because the client depends directly on a concrete class."
+            },
+            {
+                question: "Factory Method delegates:",
+                options: ["Inheritance", "Object creation", "Compilation", "Testing"],
+                correctAnswer: 1,
+                explanation: "Factory Method delegates object creation to factory classes, allowing the client to remain decoupled from concrete implementations."
+            },
+            {
+                question: "According to the pattern, who decides which object to create?",
+                options: ["Client", "User", "Factory", "Database"],
+                correctAnswer: 2,
+                explanation: "According to the Factory Method pattern, the Factory decides which object to create, not the client."
+            },
+            {
+                question: "The Product component is usually:",
+                options: ["Interface or Abstract Class", "Database", "Factory", "Singleton"],
+                correctAnswer: 0,
+                explanation: "The Product component is usually an Interface or Abstract Class that defines the common interface for all concrete products."
+            },
+            {
+                question: "CreditCardPayment is an example of:",
+                options: ["Creator", "Product", "Concrete Product", "Client"],
+                correctAnswer: 2,
+                explanation: "CreditCardPayment is an example of a Concrete Product that implements the Product interface."
+            },
+            {
+                question: "PayPalPayment is an example of:",
+                options: ["Concrete Product", "Creator", "Singleton", "Adapter"],
+                correctAnswer: 0,
+                explanation: "PayPalPayment is an example of a Concrete Product that implements the Product interface."
+            },
+            {
+                question: "PaymentFactory is an example of:",
+                options: ["Concrete Product", "Creator", "Client", "Observer"],
+                correctAnswer: 1,
+                explanation: "PaymentFactory is an example of a Creator (abstract factory) that defines the factory method."
+            },
+            {
+                question: "CreditCardFactory is an example of:",
+                options: ["Product", "Creator", "Concrete Creator", "Interface"],
+                correctAnswer: 2,
+                explanation: "CreditCardFactory is an example of a Concrete Creator that implements the factory method to create specific products."
+            },
+            {
+                question: "Which method is the Factory Method?",
+                options: ["run()", "pay()", "createPayment()", "execute()"],
+                correctAnswer: 2,
+                explanation: "createPayment() is the Factory Method that delegates object creation to subclasses."
+            },
+            {
+                question: "Factory Method promotes:",
+                options: ["Tight Coupling", "Loose Coupling", "Global State", "Multiple Inheritance"],
+                correctAnswer: 1,
+                explanation: "Factory Method promotes loose coupling by allowing the client to depend on abstractions rather than concrete classes."
+            },
+            {
+                question: "Factory Method supports which SOLID principle?",
+                options: ["SRP only", "OCP", "ISP only", "LSP only"],
+                correctAnswer: 1,
+                explanation: "Factory Method supports the Open/Closed Principle (OCP) by allowing new products to be added without modifying existing code."
+            },
+            {
+                question: "The main idea is replacing:",
+                options: ["Interfaces", "Abstract Classes", "Direct use of new", "Constructors"],
+                correctAnswer: 2,
+                explanation: "The main idea of Factory Method is replacing the direct use of 'new' with a factory method that delegates object creation."
+            },
+            {
+                question: "Which is a real-world example mentioned in the lecture?",
+                options: ["Payment Systems", "UI Frameworks", "Game Development", "All of the above"],
+                correctAnswer: 3,
+                explanation: "All of the mentioned examples (Payment Systems, UI Frameworks, Game Development) are real-world applications of Factory Method."
+            },
+            {
+                question: "WindowsButton and MacButton represent:",
+                options: ["Concrete Products", "Factories", "Creators", "Clients"],
+                correctAnswer: 0,
+                explanation: "WindowsButton and MacButton represent Concrete Products that implement a common Button interface."
+            },
+            {
+                question: "Zombie, Robot, and Alien are examples from:",
+                options: ["Banking Systems", "Game Development", "Databases", "Networking"],
+                correctAnswer: 1,
+                explanation: "Zombie, Robot, and Alien are examples from Game Development where different enemy types can be created using Factory Method."
+            },
+            {
+                question: "Factory Method centralizes:",
+                options: ["Object Creation", "Testing", "Memory Management", "Deployment"],
+                correctAnswer: 0,
+                explanation: "Factory Method centralizes object creation logic in one place, making it easier to manage and modify."
+            },
+            {
+                question: "Factory Method improves:",
+                options: ["Maintainability", "Complexity", "Coupling", "Duplication"],
+                correctAnswer: 0,
+                explanation: "Factory Method improves maintainability by centralizing object creation and reducing coupling."
+            },
+            {
+                question: "Before Factory Method:",
+                options: ["Factory creates objects", "Client directly creates objects", "Objects don't exist", "Products are abstract"],
+                correctAnswer: 1,
+                explanation: "Before Factory Method, the client directly creates objects using the 'new' keyword, leading to tight coupling."
+            },
+            {
+                question: "After Factory Method:",
+                options: ["Factory handles creation", "Client creates everything", "No objects are created", "No interfaces are used"],
+                correctAnswer: 0,
+                explanation: "After Factory Method, the Factory handles object creation, and the client depends on abstractions."
+            },
+            {
+                question: "Which statement is true?",
+                options: ["Client should know every concrete class", "Client depends on abstractions", "Factory depends on client", "Products create factories"],
+                correctAnswer: 1,
+                explanation: "The client should depend on abstractions (interfaces) rather than concrete implementations."
+            },
+            {
+                question: "One advantage of Factory Method is:",
+                options: ["Reduced Flexibility", "Better Scalability", "More Coupling", "Less Reusability"],
+                correctAnswer: 1,
+                explanation: "Better Scalability is an advantage of Factory Method as new products can be added without modifying existing code."
+            },
+            {
+                question: "Which is NOT an advantage?",
+                options: ["Loose Coupling", "Better Maintainability", "Centralized Creation", "Fewer Classes"],
+                correctAnswer: 3,
+                explanation: "Fewer Classes is NOT an advantage of Factory Method - it actually introduces more classes (factories)."
+            },
+            {
+                question: "One disadvantage is:",
+                options: ["Less Flexibility", "More Classes", "No Reusability", "Tight Coupling"],
+                correctAnswer: 1,
+                explanation: "More Classes is a disadvantage of Factory Method as it increases the number of classes in the system."
+            },
+            {
+                question: "Another disadvantage is:",
+                options: ["Increased Complexity", "Reduced Extensibility", "No Abstraction", "Global Variables"],
+                correctAnswer: 0,
+                explanation: "Increased Complexity is a disadvantage as the pattern introduces additional layers and abstractions."
+            },
+            {
+                question: "Factory Method may be overkill when:",
+                options: ["Creation is complex", "Future extensions are expected", "Only one simple class exists", "Many products exist"],
+                correctAnswer: 2,
+                explanation: "Factory Method may be overkill when only one simple class exists and no future extensions are expected."
+            },
+            {
+                question: "Which is a common mistake?",
+                options: ["Using abstraction", "Using interfaces", "Using Factory for everything", "Using inheritance"],
+                correctAnswer: 2,
+                explanation: "Using Factory for everything is a common mistake that leads to unnecessary complexity."
+            },
+            {
+                question: "Which mistake defeats the purpose of Factory Method?",
+                options: ["Using createProduct()", "Using Product interface", "Still using new in the client", "Using abstraction"],
+                correctAnswer: 2,
+                explanation: "Still using 'new' in the client defeats the purpose of Factory Method as it maintains tight coupling."
+            },
+            {
+                question: "Factory Method creates:",
+                options: ["One Product", "Product Families", "One Instance", "One Interface"],
+                correctAnswer: 0,
+                explanation: "Factory Method creates one product at a time, unlike Abstract Factory which creates product families."
+            },
+            {
+                question: "Abstract Factory creates:",
+                options: ["One Product", "Product Families", "One Instance", "One Factory"],
+                correctAnswer: 1,
+                explanation: "Abstract Factory creates product families (related products) unlike Factory Method which creates one product."
+            },
+            {
+                question: "Singleton ensures:",
+                options: ["One Product", "Product Families", "One Instance", "One Interface"],
+                correctAnswer: 2,
+                explanation: "Singleton ensures only one instance of a class exists throughout the application."
+            },
+            {
+                question: "When should Factory Method be used?",
+                options: ["When object creation is complex", "When extension is expected", "When exact type isn't known at compile time", "All of the above"],
+                correctAnswer: 3,
+                explanation: "Factory Method should be used when object creation is complex, extension is expected, or the exact type isn't known at compile time."
+            },
+            {
+                question: "When should Factory Method be avoided?",
+                options: ["Many products exist", "Future extensions exist", "Only one simple class exists", "Creation is complex"],
+                correctAnswer: 2,
+                explanation: "Factory Method should be avoided when only one simple class exists and no future extensions are expected."
+            },
+            {
+                question: "In the restaurant analogy, the customer represents:",
+                options: ["Factory", "Product", "Client", "Creator"],
+                correctAnswer: 2,
+                explanation: "In the restaurant analogy, the customer represents the Client who orders a product without knowing how it's made."
+            },
+            {
+                question: "In the restaurant analogy, the kitchen represents:",
+                options: ["Product", "Factory", "Client", "Interface"],
+                correctAnswer: 1,
+                explanation: "In the restaurant analogy, the kitchen represents the Factory that decides how to create the product."
+            },
+            {
+                question: "Factory Method is mainly about:",
+                options: ["Creating objects directly", "Controlling how and where objects are created", "Eliminating objects", "Managing memory"],
+                correctAnswer: 1,
+                explanation: "Factory Method is mainly about controlling how and where objects are created through delegation."
+            },
+            {
+                question: "The lecture summary states Factory Method promotes:",
+                options: ["Flexibility and Scalability", "Tight Coupling", "Global State", "Deep Inheritance"],
+                correctAnswer: 0,
+                explanation: "The lecture summary states that Factory Method promotes Flexibility and Scalability."
+            },
+            {
+                question: "The most important goal of Factory Method is:",
+                options: ["Faster execution", "Better graphics", "Control object creation and reduce coupling", "Reduce memory usage"],
+                correctAnswer: 2,
+                explanation: "The most important goal of Factory Method is to control object creation and reduce coupling between components."
+            }
+        ]
     }
 };
 
@@ -2357,6 +2602,237 @@ Database Interface
                     <li>أشهر Misconceptions.</li>
                 </ul>
                 <p>دي تقريبًا كل النقاط المهمة في المحاضرة والتي غالبًا تأتي منها أسئلة الامتحان.</p>
+            </div>
+        </div>
+    `,
+    5: `
+        <div class="lecture-card">
+            <div class="lecture-header">
+                <span class="lecture-number">Lecture 5</span>
+                <h3>Factory Method Pattern</h3>
+            </div>
+            <div class="lecture-content">
+                <h4>أولًا: ما هي المشكلة التي تحلها Factory Method؟</h4>
+                <p>تخيل أنك تكتب:</p>
+                <pre>Payment payment = new CreditCardPayment();</pre>
+                <p>في كل مكان في المشروع.</p>
+                <p>بعد فترة قال العميل:</p>
+                <p>نريد دعم PayPal.</p>
+                <p>ستضطر لتعديل أماكن كثيرة:</p>
+                <pre>Payment payment = new PayPalPayment();</pre>
+                <p>ثم يأتي Apple Pay ثم Google Pay...</p>
+                <p><strong>المشكلة:</strong></p>
+                <ul>
+                    <li>Tight Coupling</li>
+                    <li>صعوبة التعديل</li>
+                    <li>كسر OCP</li>
+                    <li>تكرار الكود</li>
+                </ul>
+
+                <h4>الفكرة الأساسية</h4>
+                <p>بدل:</p>
+                <pre>new Product()</pre>
+                <p>نستخدم:</p>
+                <pre>createProduct()</pre>
+                <p>يعني العميل لا ينشئ الكائن بنفسه.</p>
+                <p>المصنع (Factory) هو الذي يقرر أي Object سيتم إنشاؤه.</p>
+
+                <h4>تعريف Factory Method</h4>
+                <p><strong>Factory Method defines an interface for creating objects, but lets subclasses decide which class to instantiate.</strong></p>
+                <p>يعني:</p>
+                <ul>
+                    <li>نحدد طريقة إنشاء الكائن.</li>
+                    <li>لكن القرار النهائي لأي Class سيتم إنشاؤه يكون داخل الـ Factory.</li>
+                </ul>
+
+                <h4>الفكرة المهمة جدًا</h4>
+                <p><strong>Delegation</strong></p>
+                <p>Factory Method تقوم بعمل:</p>
+                <p><strong>Delegation of object creation</strong></p>
+                <p>أي أن العميل:</p>
+                <p><strong>Client</strong></p>
+                <p>لا يقرر إنشاء:</p>
+                <pre>CreditCardPayment</pre>
+                <p>أو</p>
+                <pre>PayPalPayment</pre>
+                <p>بل الـ Factory هي التي تقرر.</p>
+
+                <h4>Structure</h4>
+                <p>يتكون النمط من 4 أجزاء:</p>
+                <h5>1. Product</h5>
+                <p>واجهة أو Abstract Class</p>
+                <pre>interface Payment</pre>
+
+                <h5>2. Concrete Products</h5>
+                <pre>CreditCardPayment
+PayPalPayment</pre>
+
+                <h5>3. Creator</h5>
+                <p>المصنع المجرد</p>
+                <pre>abstract class PaymentFactory</pre>
+                <p>ويحتوي:</p>
+                <pre>createPayment()</pre>
+
+                <h5>4. Concrete Factories</h5>
+                <pre>CreditCardFactory
+PayPalFactory</pre>
+                <p>كل Factory تنشئ Product معينًا.</p>
+
+                <h4>مثال المحاضرة</h4>
+                <h5>Product</h5>
+                <pre>interface Payment {
+   void pay();
+}</pre>
+
+                <h5>Concrete Products</h5>
+                <pre>class CreditCardPayment
+class PayPalPayment</pre>
+
+                <h5>Factory</h5>
+                <pre>abstract class PaymentFactory {
+    abstract Payment createPayment();
+}</pre>
+
+                <h5>Concrete Factories</h5>
+                <p>class CreditCardFactory</p>
+                <p>تنشئ:</p>
+                <pre>CreditCardPayment</pre>
+                <p>class PayPalFactory</p>
+                <p>تنشئ:</p>
+                <pre>PayPalPayment</pre>
+
+                <h5>Client Code</h5>
+                <pre>PaymentFactory factory =
+      new PayPalFactory();
+
+Payment payment =
+      factory.createPayment();
+
+payment.pay();</pre>
+
+                <h4>Before vs After</h4>
+                <h5>Before</h5>
+                <pre>Payment p =
+   new CreditCardPayment();</pre>
+                <p>العميل مرتبط مباشرة بالكلاس.</p>
+
+                <h5>After</h5>
+                <pre>PaymentFactory factory =
+      new CreditCardFactory();
+
+Payment p =
+      factory.createPayment();</pre>
+                <p>الإنشاء أصبح مركزيًا ومرنًا.</p>
+
+                <h4>مثال البنك الموجود بالمحاضرة</h4>
+                <p>المستخدم يدخل رقم البطاقة.</p>
+                <p>أول 6 أرقام تحدد البنك:</p>
+                <pre>123456 → BankA
+111111 → BankB</pre>
+                <p>ثم:</p>
+                <pre>BankFactory.GetBank()</pre>
+                <p>هي التي تقرر أي Bank Object سيتم إنشاؤه.</p>
+
+                <h4>أمثلة حقيقية</h4>
+                <h5>UI Framework</h5>
+                <pre>Button
+ ├── WindowsButton
+ └── MacButton</pre>
+
+                <h5>Document Editor</h5>
+                <pre>Document
+ ├── TextDocument
+ └── PDFDocument</pre>
+
+                <h5>Games</h5>
+                <pre>Enemy
+ ├── Zombie
+ ├── Robot
+ └── Alien</pre>
+
+                <h5>Payment Systems</h5>
+                <pre>CreditCard
+PayPal
+ApplePay</pre>
+
+                <h4>المميزات</h4>
+                <h5>1. Loose Coupling</h5>
+                <p>العميل يعتمد على:</p>
+                <pre>Payment</pre>
+                <p>وليس:</p>
+                <pre>CreditCardPayment</pre>
+
+                <h5>2. Open/Closed Principle</h5>
+                <p>يمكن إضافة:</p>
+                <pre>ApplePayPayment</pre>
+                <p>بدون تعديل الكود القديم.</p>
+
+                <h5>3. Centralized Object Creation</h5>
+                <p>مكان واحد فقط لإنشاء Objects.</p>
+
+                <h5>4. Better Maintainability</h5>
+                <p>الصيانة أسهل.</p>
+
+                <h4>العيوب</h4>
+                <h5>More Classes</h5>
+                <p>لكل Product غالبًا Factory خاصة به.</p>
+
+                <h5>Increased Complexity</h5>
+                <p>عدد ملفات أكثر.</p>
+
+                <h5>Overkill</h5>
+                <p>لو عندك Class بسيطة واحدة فقط فلا داعي لاستخدام Factory Method.</p>
+
+                <h4>أخطاء شائعة</h4>
+                <h5>1. استخدام Factory لكل شيء</h5>
+                <p>يسبب:</p>
+                <p>Unnecessary Abstraction</p>
+
+                <h5>2. ما زلت تستخدم new داخل Client</h5>
+                <p>مثل:</p>
+                <pre>Payment p =
+    new CreditCardPayment();</pre>
+                <p>وهذا يهدم فكرة الـ Pattern كلها.</p>
+
+                <h5>3. الخلط بين Factory Method و Abstract Factory</h5>
+                <p><strong>Factory Method</strong></p>
+                <p>ينشئ:</p>
+                <pre>ONE Product</pre>
+                <p><strong>Abstract Factory</strong></p>
+                <p>ينشئ:</p>
+                <pre>FAMILY of Products</pre>
+
+                <h4>متى نستخدم Factory Method؟</h4>
+                <p>استخدمها عندما:</p>
+                <ul>
+                    <li>Object Creation Complex</li>
+                    <li>عملية الإنشاء معقدة.</li>
+                    <li>Extensible System</li>
+                    <li>تتوقع إضافة أنواع جديدة.</li>
+                    <li>Unknown Type</li>
+                    <li>لا تعرف نوع الـ Object وقت الـ Compile.</li>
+                </ul>
+
+                <h4>متى لا نستخدمها؟</h4>
+                <p>إذا:</p>
+                <ul>
+                    <li>Only One Simple Class</li>
+                    <li>أو</li>
+                    <li>No Future Extension</li>
+                </ul>
+
+                <h4>التشبيه الشهير</h4>
+                <p><strong>Restaurant Kitchen</strong></p>
+                <p>العميل يقول:</p>
+                <pre>Pizza</pre>
+                <p>ولا يدخل المطبخ.</p>
+                <p>المطبخ هو الذي يقرر:</p>
+                <ul>
+                    <li>المكونات</li>
+                    <li>طريقة التحضير</li>
+                </ul>
+                <p>العميل فقط يطلب المنتج.</p>
+                <p>وهذا بالضبط ما تفعله Factory Method.</p>
             </div>
         </div>
     `
