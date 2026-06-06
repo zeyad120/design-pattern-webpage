@@ -1469,6 +1469,251 @@ const quizDatabase = {
                 explanation: "The most important idea in Abstract Factory is to create families of related objects together."
             }
         ]
+    },
+    "adapter-pattern": {
+        title: "Adapter Pattern Quiz",
+        questions: [
+            {
+                question: "The Adapter Pattern belongs to which category of design patterns?",
+                options: ["Creational", "Behavioral", "Structural", "Architectural"],
+                correctAnswer: 2,
+                explanation: "The Adapter Pattern belongs to the Structural category of design patterns."
+            },
+            {
+                question: "What is the main purpose of the Adapter Pattern?",
+                options: ["Create objects", "Convert one interface into another", "Add new functionality", "Control object creation"],
+                correctAnswer: 1,
+                explanation: "The main purpose of the Adapter Pattern is to convert one interface into another."
+            },
+            {
+                question: "The Adapter Pattern is used when:",
+                options: ["Classes are already compatible", "Interfaces are incompatible", "Objects are immutable", "Multiple databases are used"],
+                correctAnswer: 1,
+                explanation: "The Adapter Pattern is used when interfaces are incompatible."
+            },
+            {
+                question: "The Adapter acts as:",
+                options: ["A factory", "A bridge between incompatible interfaces", "A singleton", "A controller"],
+                correctAnswer: 1,
+                explanation: "The Adapter acts as a bridge between incompatible interfaces."
+            },
+            {
+                question: "Which statement best describes the Adapter Pattern?",
+                options: ["It creates new objects", "It changes database structures", "It allows incompatible classes to work together", "It improves security"],
+                correctAnswer: 2,
+                explanation: "The Adapter Pattern allows incompatible classes to work together."
+            },
+            {
+                question: "In the Media Player example, the Target interface is:",
+                options: ["AudioPlayer", "MediaPlayer", "MediaAdapter", "AdvancedMediaPlayer"],
+                correctAnswer: 1,
+                explanation: "In the Media Player example, the Target interface is MediaPlayer."
+            },
+            {
+                question: "In the Media Player example, the Adaptee is:",
+                options: ["MediaPlayer", "MediaAdapter", "AdvancedMediaPlayer", "AudioPlayer"],
+                correctAnswer: 2,
+                explanation: "In the Media Player example, the Adaptee is AdvancedMediaPlayer."
+            },
+            {
+                question: "In the Media Player example, the Client is:",
+                options: ["AudioPlayer", "MediaAdapter", "MediaPlayer", "MP4Player"],
+                correctAnswer: 0,
+                explanation: "In the Media Player example, the Client is AudioPlayer."
+            },
+            {
+                question: "The Adapter's responsibility is to:",
+                options: ["Store data", "Translate requests between interfaces", "Encrypt files", "Create objects"],
+                correctAnswer: 1,
+                explanation: "The Adapter's responsibility is to translate requests between interfaces."
+            },
+            {
+                question: "Which type of Adapter uses inheritance?",
+                options: ["Object Adapter", "Class Adapter", "Composite Adapter", "Dynamic Adapter"],
+                correctAnswer: 1,
+                explanation: "Class Adapter uses inheritance."
+            },
+            {
+                question: "Which type of Adapter uses composition?",
+                options: ["Class Adapter", "Object Adapter", "Static Adapter", "Proxy Adapter"],
+                correctAnswer: 1,
+                explanation: "Object Adapter uses composition."
+            },
+            {
+                question: "The most commonly used Adapter type is:",
+                options: ["Class Adapter", "Object Adapter", "Proxy Adapter", "Facade Adapter"],
+                correctAnswer: 1,
+                explanation: "Object Adapter is the most commonly used Adapter type."
+            },
+            {
+                question: "A limitation of Class Adapter is:",
+                options: ["Multiple inheritance issues", "Poor readability", "Memory leaks", "No reusability"],
+                correctAnswer: 0,
+                explanation: "A limitation of Class Adapter is multiple inheritance issues."
+            },
+            {
+                question: "Object Adapter is preferred because it is:",
+                options: ["Less flexible", "More flexible", "Faster only", "Simpler to code always"],
+                correctAnswer: 1,
+                explanation: "Object Adapter is preferred because it is more flexible."
+            },
+            {
+                question: "Adapter Pattern supports:",
+                options: ["Code reuse", "Code deletion", "Code duplication", "Code encryption"],
+                correctAnswer: 0,
+                explanation: "Adapter Pattern supports code reuse."
+            },
+            {
+                question: "When integrating legacy code, which pattern is often useful?",
+                options: ["Builder", "Observer", "Adapter", "Strategy"],
+                correctAnswer: 2,
+                explanation: "When integrating legacy code, the Adapter Pattern is often useful."
+            },
+            {
+                question: "Adapter Pattern is useful when an existing class:",
+                options: ["Can easily be modified", "Cannot be modified", "Is abstract", "Has no methods"],
+                correctAnswer: 1,
+                explanation: "Adapter Pattern is useful when an existing class cannot be modified."
+            },
+            {
+                question: "A power plug adapter is a real-world example of:",
+                options: ["Factory Pattern", "Adapter Pattern", "Proxy Pattern", "Singleton Pattern"],
+                correctAnswer: 1,
+                explanation: "A power plug adapter is a real-world example of the Adapter Pattern."
+            },
+            {
+                question: "The core idea of Adapter Pattern is:",
+                options: ["Object creation", "Interface conversion", "State management", "Event handling"],
+                correctAnswer: 1,
+                explanation: "The core idea of Adapter Pattern is interface conversion."
+            },
+            {
+                question: "Which principle is supported by Adapter Pattern?",
+                options: ["Open/Closed Principle", "YAGNI", "KISS only", "DRY only"],
+                correctAnswer: 0,
+                explanation: "Adapter Pattern supports the Open/Closed Principle."
+            },
+            {
+                question: "Open/Closed Principle means:",
+                options: ["Existing code must be modified", "New adapters can be added without changing existing code", "Classes must remain closed permanently", "No inheritance is allowed"],
+                correctAnswer: 1,
+                explanation: "Open/Closed Principle means new adapters can be added without changing existing code."
+            },
+            {
+                question: "Which design principle states that Adapter should handle conversion only?",
+                options: ["Dependency Inversion", "Single Responsibility Principle", "Interface Segregation", "Liskov Substitution"],
+                correctAnswer: 1,
+                explanation: "Single Responsibility Principle states that Adapter should handle conversion only."
+            },
+            {
+                question: "Loose Coupling means:",
+                options: ["Client depends on implementation", "Client depends on interfaces", "Classes are tightly connected", "No interfaces are used"],
+                correctAnswer: 1,
+                explanation: "Loose Coupling means client depends on interfaces."
+            },
+            {
+                question: "One advantage of Adapter Pattern is:",
+                options: ["Reduced flexibility", "Increased reusability", "Elimination of interfaces", "Better database performance"],
+                correctAnswer: 1,
+                explanation: "One advantage of Adapter Pattern is increased reusability."
+            },
+            {
+                question: "Another advantage of Adapter Pattern is:",
+                options: ["Flexibility", "Increased complexity only", "Lower maintainability", "Reduced extensibility"],
+                correctAnswer: 0,
+                explanation: "Another advantage of Adapter Pattern is flexibility."
+            },
+            {
+                question: "A disadvantage of Adapter Pattern is:",
+                options: ["Less code reuse", "Increased complexity", "No flexibility", "No abstraction"],
+                correctAnswer: 1,
+                explanation: "A disadvantage of Adapter Pattern is increased complexity."
+            },
+            {
+                question: "Another disadvantage is:",
+                options: ["Extra abstraction layer may affect performance", "No compatibility", "No extensibility", "No maintainability"],
+                correctAnswer: 0,
+                explanation: "Another disadvantage is that the extra abstraction layer may affect performance."
+            },
+            {
+                question: "Overusing Adapter Pattern may lead to:",
+                options: ["Better architecture", "Bad design", "Better performance", "Fewer classes"],
+                correctAnswer: 1,
+                explanation: "Overusing Adapter Pattern may lead to bad design."
+            },
+            {
+                question: "Adapter Pattern should NOT be used when:",
+                options: ["Interfaces are incompatible", "Legacy code exists", "Interfaces are already compatible", "Third-party libraries are used"],
+                correctAnswer: 2,
+                explanation: "Adapter Pattern should NOT be used when interfaces are already compatible."
+            },
+            {
+                question: "Adapter Pattern is commonly used with:",
+                options: ["Third-party libraries", "Gaming engines only", "Operating systems only", "Databases only"],
+                correctAnswer: 0,
+                explanation: "Adapter Pattern is commonly used with third-party libraries."
+            },
+            {
+                question: "Which is a real-world software use case for Adapter?",
+                options: ["Payment gateways", "Word processors only", "Antivirus software only", "Operating systems only"],
+                correctAnswer: 0,
+                explanation: "Payment gateways are a real-world software use case for Adapter."
+            },
+            {
+                question: "Database drivers are an example of:",
+                options: ["Adapter usage", "Builder usage", "Singleton usage", "Observer usage"],
+                correctAnswer: 0,
+                explanation: "Database drivers are an example of Adapter usage."
+            },
+            {
+                question: "JSON/XML converters commonly use:",
+                options: ["Factory Pattern", "Adapter Pattern", "State Pattern", "Template Method"],
+                correctAnswer: 1,
+                explanation: "JSON/XML converters commonly use Adapter Pattern."
+            },
+            {
+                question: "In the lecture example, SalaryCalculator accepts:",
+                options: ["MachineOperator", "Employee", "String", "Object"],
+                correctAnswer: 1,
+                explanation: "In the lecture example, SalaryCalculator accepts Employee."
+            },
+            {
+                question: "The compatibility problem occurs because SalaryCalculator expects:",
+                options: ["MachineOperator", "Employee", "ShiftCode", "XML"],
+                correctAnswer: 1,
+                explanation: "The compatibility problem occurs because SalaryCalculator expects Employee."
+            },
+            {
+                question: "SalaryAdapter converts:",
+                options: ["Employee → MachineOperator", "MachineOperator → Employee", "JSON → XML", "MP3 → MP4"],
+                correctAnswer: 1,
+                explanation: "SalaryAdapter converts MachineOperator to Employee."
+            },
+            {
+                question: "MachineOperator contains an additional field called:",
+                options: ["Address", "Email", "ShiftCode", "Department"],
+                correctAnswer: 2,
+                explanation: "MachineOperator contains an additional field called ShiftCode."
+            },
+            {
+                question: "The relationship used in Object Adapter is:",
+                options: ["Is-A", "Has-A", "Depends-On", "Uses-A"],
+                correctAnswer: 1,
+                explanation: "The relationship used in Object Adapter is Has-A (composition)."
+            },
+            {
+                question: "The relationship used in Class Adapter is:",
+                options: ["Has-A", "Is-A", "Aggregates-A", "Composes-A"],
+                correctAnswer: 1,
+                explanation: "The relationship used in Class Adapter is Is-A (inheritance)."
+            },
+            {
+                question: "Which sequence correctly represents Adapter Pattern structure?",
+                options: ["Client → Adapter → Adaptee", "Adapter → Client → Adaptee", "Adaptee → Client → Adapter", "Client → Adaptee → Adapter"],
+                correctAnswer: 0,
+                explanation: "The correct sequence representing Adapter Pattern structure is Client → Adapter → Adaptee."
+            }
+        ]
     }
 };
 
@@ -3341,6 +3586,192 @@ MacFactory</pre>
                     <li>Factory Method vs Abstract Factory.</li>
                     <li>Common Mistakes.</li>
                 </ul>
+            </div>
+        </div>
+    `,
+    7: `
+        <div class="lecture-card">
+            <div class="lecture-header">
+                <span class="lecture-number">Lecture 7</span>
+                <h3>Adapter Pattern</h3>
+            </div>
+            <div class="lecture-content">
+                <h4>شرح محاضرة Adapter Pattern</h4>
+                <p>الـ Adapter Pattern هو Structural Design Pattern وظيفته الأساسية أنه يجعل كلاسّين أو نظامين بواجهات (Interfaces) مختلفة يشتغلوا مع بعض بدون تعديل الكود الأصلي.</p>
+
+                <h4>الفكرة ببساطة</h4>
+                <p>تخيل عندك شاحن لابتوب ومقبس الحائط مختلف عنه، فتستخدم Adapter يحول بينهم.</p>
+
+                <p>في البرمجة:</p>
+                <ul>
+                    <li>Client متوقع Interface معين.</li>
+                    <li>يوجد Class قديم أو مكتبة خارجية Interface بتاعتها مختلف.</li>
+                    <li>Adapter يقوم بالترجمة بين الاثنين.</li>
+                </ul>
+
+                <h4>المشكلة التي يحلها Adapter</h4>
+                <p>أحيانًا يكون لدينا:</p>
+                <ul>
+                    <li>أسماء دوال مختلفة.</li>
+                    <li>مدخلات ومخرجات مختلفة.</li>
+                    <li>Interfaces غير متوافقة.</li>
+                </ul>
+                <p>وبالتالي لا يستطيع الـ Client استخدام الكلاس الموجود مباشرة.</p>
+
+                <h4>مثال المحاضرة</h4>
+                <p>لدينا:</p>
+                <p><strong>Employee</strong></p>
+                <pre>public class Employee
+{
+   public string Name { get; set; }
+   public double BasicSalary { get; set; }
+}</pre>
+
+                <p><strong>SalaryCalculator</strong></p>
+                <p>يحسب المرتب من Employee.</p>
+                <pre>public double CalcSalary(Employee emp)
+{
+   return emp.BasicSalary * 1.5;
+}</pre>
+
+                <h4>المشكلة</h4>
+                <p>ظهر كلاس جديد:</p>
+                <pre>public class MachineOperator
+{
+   public string Name { get; set; }
+   public double BasicSalary { get; set; }
+   public string ShiftCode { get; set; }
+}</pre>
+                <p>لكن Calculator يقبل Employee فقط وليس MachineOperator.</p>
+
+                <h4>الحل: Adapter</h4>
+                <p>ننشئ كلاس وسيط:</p>
+                <pre>public class SalaryAdapter : SalaryCalculator
+{
+   private Employee emp;
+
+   public double CalcSalary(MachineOperator op)
+   {
+      emp = new Employee();
+      emp.BasicSalary = op.BasicSalary;
+
+      return base.CalcSalary(emp);
+   }
+}</pre>
+
+                <p>الـ Adapter:</p>
+                <ul>
+                    <li>يستقبل MachineOperator.</li>
+                    <li>يحوله إلى Employee.</li>
+                    <li>يرسل البيانات إلى SalaryCalculator.</li>
+                </ul>
+
+                <h4>مكونات Adapter Pattern</h4>
+                <p><strong>1. Target</strong></p>
+                <p>الواجهة المطلوبة من العميل.</p>
+                <pre>interface MediaPlayer
+{
+   void play(String audioType,String fileName);
+}</pre>
+
+                <p><strong>2. Adaptee</strong></p>
+                <p>الكلاس الموجود مسبقًا.</p>
+                <pre>class AdvancedMediaPlayer
+{
+   void playMp4(String fileName);
+}</pre>
+
+                <p><strong>3. Adapter</strong></p>
+                <p>يقوم بالتحويل بين Target و Adaptee.</p>
+                <pre>class MediaAdapter implements MediaPlayer</pre>
+
+                <p><strong>4. Client</strong></p>
+                <p>يستخدم Target فقط.</p>
+                <pre>AudioPlayer</pre>
+
+                <h4>أنواع Adapter Pattern</h4>
+                <p><strong>1. Class Adapter</strong></p>
+                <p>يعتمد على Inheritance.</p>
+                <pre>class Adapter extends Adaptee implements Target</pre>
+                <p>المميزات:</p>
+                <ul>
+                    <li>أسرع.</li>
+                </ul>
+                <p>العيوب:</p>
+                <ul>
+                    <li>أقل مرونة بسبب Single Inheritance.</li>
+                </ul>
+
+                <p><strong>2. Object Adapter (الأكثر استخدامًا)</strong></p>
+                <p>يعتمد على Composition.</p>
+                <pre>private Adaptee adaptee;</pre>
+                <p>المميزات:</p>
+                <ul>
+                    <li>أكثر مرونة.</li>
+                    <li>المفضل في الأنظمة الحديثة.</li>
+                </ul>
+
+                <h4>متى نستخدم Adapter؟</h4>
+                <ul>
+                    <li>عند وجود Interfaces غير متوافقة.</li>
+                    <li>عند إعادة استخدام Legacy Code.</li>
+                    <li>عند دمج مكتبات خارجية.</li>
+                    <li>عندما لا نستطيع تعديل الكلاس الأصلي.</li>
+                </ul>
+
+                <h4>المميزات</h4>
+                <ul>
+                    <li>إعادة استخدام الكود.</li>
+                    <li>المرونة.</li>
+                    <li>فصل منطق التحويل.</li>
+                    <li>تطبيق Open/Closed Principle.</li>
+                </ul>
+
+                <h4>العيوب</h4>
+                <ul>
+                    <li>زيادة عدد الكلاسات.</li>
+                    <li>طبقة إضافية قد تؤثر قليلًا على الأداء.</li>
+                    <li>الاستخدام الزائد قد يؤدي لتصميم سيئ.</li>
+                </ul>
+
+                <h4>مقارنة مهمة</h4>
+                <p><strong>Adapter vs Decorator</strong></p>
+                <ul>
+                    <li>Adapter: تحويل Interface</li>
+                    <li>Decorator: إضافة سلوك جديد</li>
+                </ul>
+
+                <p><strong>Adapter vs Facade</strong></p>
+                <ul>
+                    <li>Adapter: حل عدم التوافق</li>
+                    <li>Facade: تبسيط نظام كامل</li>
+                </ul>
+
+                <h4>استخدامات واقعية</h4>
+                <ul>
+                    <li>Legacy Systems</li>
+                    <li>Payment Gateways</li>
+                    <li>Database Drivers</li>
+                    <li>JSON/XML Converters</li>
+                    <li>Hardware Interfaces</li>
+                </ul>
+
+                <h4>أخطاء شائعة</h4>
+                <ul>
+                    <li>استخدام Adapter رغم توافق الـ Interfaces.</li>
+                    <li>وضع Business Logic داخل Adapter.</li>
+                    <li>تجاهل حلول أبسط مثل Refactoring.</li>
+                </ul>
+
+                <h4>مبادئ التصميم المستخدمة</h4>
+                <ul>
+                    <li>SRP</li>
+                    <li>OCP</li>
+                    <li>Loose Coupling</li>
+                </ul>
+
+                <h4>ملخص للحفظ</h4>
+                <p>Adapter Pattern = تحويل Interface إلى Interface آخر متوقع بواسطة Client بحيث تتمكن الأنظمة غير المتوافقة من العمل معًا دون تعديل الكود الأصلي.</p>
             </div>
         </div>
     `
