@@ -58,7 +58,7 @@ body {
     padding: 2rem 3rem;
     border-radius: 12px;
     box-shadow: var(--shadow-lg);
-    z-index: 1000;
+    z-index: 9999;
     opacity: 0;
     transition: all 0.3s ease;
     pointer-events: none;
@@ -67,6 +67,7 @@ body {
 .incorrect-popup.show {
     transform: translateX(-50%) translateY(0);
     opacity: 1;
+    pointer-events: auto;
 }
 
 .popup-text {
@@ -1002,6 +1003,7 @@ header h1 {
     .incorrect-popup {
         padding: 1.5rem 2rem;
         top: 10px;
+        z-index: 10000;
     }
 
     .popup-text {
