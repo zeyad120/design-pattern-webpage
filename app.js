@@ -796,13 +796,15 @@ const elements = {
     backToLectureList: document.getElementById('back-to-lecture-list'),
     lectureListView: document.getElementById('lecture-list-view'),
     lectureDetailView: document.getElementById('lecture-detail-view'),
-    lectureDetailContent: document.getElementById('lecture-detail-content')
+    lectureDetailContent: document.getElementById('lecture-detail-content'),
+    lastScoreElements: document.querySelectorAll('.last-score')
 };
 
 // Initialize
 function init() {
     loadGlobalStats();
     updateGlobalStatsDisplay();
+    loadLastScores();
     setupEventListeners();
     loadTheme();
     loadQuizState();
@@ -824,10 +826,35 @@ function saveGlobalStats() {
 // Update Global Statistics Display
 function updateGlobalStatsDisplay() {
     elements.totalQuizzes.textContent = `Total Quizzes: ${globalStats.totalQuizzes}`;
-    const avgScore = globalStats.totalQuizzes > 0 
-        ? Math.round((globalStats.totalScore / globalStats.totalQuizzes) * 10) / 10 
+    const avgScore = globalStats.totalQuizzes > 0
+        ? Math.round((globalStats.totalScore / globalStats.totalQuizzes) * 10) / 10
         : 0;
     elements.averageScore.textContent = `Avg Score: ${avgScore}%`;
+}
+
+// Save Last Score for a Category
+function saveLastScore(category, score, total) {
+    const lastScores = JSON.parse(localStorage.getItem('quizLastScores') || '{}');
+    lastScores[category] = {
+        score: score,
+        total: total,
+        percentage: ((score / total) * 100).toFixed(1)
+    };
+    localStorage.setItem('quizLastScores', JSON.stringify(lastScores));
+}
+
+// Load Last Scores and Display on Home Screen
+function loadLastScores() {
+    const lastScores = JSON.parse(localStorage.getItem('quizLastScores') || '{}');
+    elements.lastScoreElements.forEach(element => {
+        const category = element.dataset.category;
+        if (lastScores[category]) {
+            const data = lastScores[category];
+            element.textContent = `Last Score: ${data.score}/${data.total} (${data.percentage}%)`;
+        } else {
+            element.textContent = 'Last Score: --';
+        }
+    });
 }
 
 // Setup Event Listeners
@@ -2024,6 +2051,9 @@ function submitQuiz() {
     currentState.quizCompleted = true;
     saveQuizState();
 
+    // Save last score for this category
+    saveLastScore(category, correctAnswers, questions.length);
+
     // Update global statistics
     globalStats.totalQuizzes++;
     globalStats.totalScore += (correctAnswers / questions.length) * 100;
@@ -2119,6 +2149,7 @@ function goHome() {
         score: 0
     };
     clearQuizState();
+    loadLastScores();
     showScreen('home');
 }
 

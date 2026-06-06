@@ -409,6 +409,9 @@ header h1 {
 
 .card-meta {
     margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .question-count {
@@ -417,6 +420,15 @@ header h1 {
     border-radius: 20px;
     font-size: 0.85rem;
     color: var(--text-secondary);
+}
+
+.last-score {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
 }
 
 .start-btn {
