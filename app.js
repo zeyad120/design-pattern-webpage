@@ -1543,6 +1543,20 @@ function init() {
     setupEventListeners();
     loadTheme();
     loadQuizState();
+    
+    // Set initial history state only for lectures section
+    const hash = window.location.hash.replace('#', '') || 'home';
+    if (hash === 'lectures' || hash === 'home') {
+        history.replaceState({ screen: hash }, '', `#${hash}`);
+    } else {
+        history.replaceState({ screen: 'home' }, '', '#home');
+    }
+    
+    // Show the screen based on hash (only for lectures)
+    if (hash === 'lectures') {
+        showScreen('lectures', false);
+        showLectureListView();
+    }
 }
 
 // Load Global Statistics from Local Storage
@@ -1601,7 +1615,9 @@ function setupEventListeners() {
     elements.lecturesBtn.addEventListener('click', showLectures);
 
     // Back to Home from Lectures
-    elements.backToHome.addEventListener('click', goHome);
+    elements.backToHome.addEventListener('click', () => {
+        showScreen('home', true);
+    });
 
     // Lecture Item Cards
     elements.lectureItemCards.forEach(card => {
@@ -1683,16 +1699,21 @@ function clearQuizState() {
 }
 
 // Show Screen
-function showScreen(screenName) {
+function showScreen(screenName, pushToHistory = false) {
     Object.values(screens).forEach(screen => {
         screen.classList.remove('active');
     });
     screens[screenName].classList.add('active');
+    
+    // Replace state in history only for lectures section navigation (disables forward button)
+    if (pushToHistory) {
+        history.replaceState({ screen: screenName }, '', `#${screenName}`);
+    }
 }
 
 // Show Lectures Screen
 function showLectures() {
-    showScreen('lectures');
+    showScreen('lectures', true);
     showLectureListView();
 }
 
@@ -3660,6 +3681,23 @@ function goHome() {
     loadLastScores();
     showScreen('home');
 }
+
+// Handle browser back/forward button (only for lectures section)
+window.addEventListener('popstate', (event) => {
+    if (event.state && event.state.screen) {
+        const screen = event.state.screen;
+        // Only handle lectures and home screens
+        if (screen === 'lectures' || screen === 'home') {
+            showScreen(screen, false);
+            if (screen === 'lectures') {
+                showLectureListView();
+            }
+        }
+    } else {
+        // If no state, go to home screen
+        showScreen('home', false);
+    }
+});
 
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', init);
