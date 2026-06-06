@@ -1991,7 +1991,7 @@ const elements = {
     themeIcon: document.querySelector('.theme-icon'),
     totalQuizzes: document.getElementById('total-quizzes'),
     averageScore: document.getElementById('average-score'),
-    categoryCards: document.querySelectorAll('.category-card'),
+    categoryCards: null,
     quizTitle: document.getElementById('quiz-title'),
     quitBtn: document.getElementById('quit-btn'),
     progressFill: document.getElementById('progress-fill'),
@@ -2017,7 +2017,7 @@ const elements = {
     backToHome: document.getElementById('back-to-home'),
     backToResults: document.getElementById('back-to-results'),
     incorrectPopup: document.getElementById('incorrect-popup'),
-    lectureItemCards: document.querySelectorAll('.lecture-item-card'),
+    lectureItemCards: null,
     backToLectureList: document.getElementById('back-to-lecture-list'),
     lectureListView: document.getElementById('lecture-list-view'),
     lectureDetailView: document.getElementById('lecture-detail-view'),
@@ -2110,7 +2110,8 @@ function setupEventListeners() {
     });
 
     // Lecture Item Cards
-    elements.lectureItemCards.forEach(card => {
+    const lectureCards = document.querySelectorAll('.lecture-item-card');
+    lectureCards.forEach(card => {
         card.addEventListener('click', () => {
             const lectureId = card.dataset.lecture;
             showLectureDetailView(lectureId);
@@ -2121,7 +2122,8 @@ function setupEventListeners() {
     elements.backToLectureList.addEventListener('click', showLectureListView);
 
     // Category Cards
-    elements.categoryCards.forEach(card => {
+    const categoryCards = document.querySelectorAll('.category-card');
+    categoryCards.forEach(card => {
         card.addEventListener('click', () => {
             const category = card.dataset.category;
             startQuiz(category);
