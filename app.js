@@ -1224,6 +1224,251 @@ const quizDatabase = {
                 explanation: "The most important goal of Factory Method is to control object creation and reduce coupling between components."
             }
         ]
+    },
+    "abstract-factory-pattern": {
+        title: "Lecture 6: Abstract Factory Pattern",
+        questions: [
+            {
+                question: "Abstract Factory belongs to:",
+                options: ["Structural", "Behavioral", "Creational", "Architectural"],
+                correctAnswer: 2,
+                explanation: "Abstract Factory belongs to the Creational category as it deals with object creation."
+            },
+            {
+                question: "Abstract Factory creates:",
+                options: ["One object", "Families of related objects", "Algorithms", "States"],
+                correctAnswer: 1,
+                explanation: "Abstract Factory creates families of related objects, not just single objects."
+            },
+            {
+                question: "The main goal is:",
+                options: ["Object deletion", "Object communication", "Creating related object families", "Testing"],
+                correctAnswer: 2,
+                explanation: "The main goal of Abstract Factory is creating families of related objects together."
+            },
+            {
+                question: "Without Abstract Factory, UI systems often suffer from:",
+                options: ["Recursion", "Too many if-else statements", "Deadlocks", "Memory leaks"],
+                correctAnswer: 1,
+                explanation: "Without Abstract Factory, UI systems often suffer from too many if-else statements to handle different platforms."
+            },
+            {
+                question: "Abstract Factory promotes:",
+                options: ["Tight Coupling", "Loose Coupling", "Global State", "Duplication"],
+                correctAnswer: 1,
+                explanation: "Abstract Factory promotes loose coupling by allowing the client to depend on abstractions."
+            },
+            {
+                question: "WindowsFactory creates:",
+                options: ["Mac Products", "Linux Products", "Windows Products", "Database Drivers"],
+                correctAnswer: 2,
+                explanation: "WindowsFactory creates Windows Products (WindowsButton, WindowsCheckbox, etc.)."
+            },
+            {
+                question: "MacFactory creates:",
+                options: ["Related Mac Products", "Windows Products", "Random Products", "One Product Only"],
+                correctAnswer: 0,
+                explanation: "MacFactory creates related Mac Products (MacButton, MacCheckbox, etc.)."
+            },
+            {
+                question: "Button and Checkbox are examples of:",
+                options: ["Abstract Products", "Factories", "Clients", "Singletons"],
+                correctAnswer: 0,
+                explanation: "Button and Checkbox are examples of Abstract Products - interfaces that define the product types."
+            },
+            {
+                question: "WindowsButton is:",
+                options: ["Abstract Product", "Concrete Product", "Factory", "Client"],
+                correctAnswer: 1,
+                explanation: "WindowsButton is a Concrete Product that implements the Button interface."
+            },
+            {
+                question: "GUIFactory is:",
+                options: ["Concrete Product", "Client", "Abstract Factory", "Concrete Factory"],
+                correctAnswer: 2,
+                explanation: "GUIFactory is an Abstract Factory that defines the interface for creating product families."
+            },
+            {
+                question: "WindowsFactory is:",
+                options: ["Abstract Factory", "Concrete Factory", "Product", "Interface"],
+                correctAnswer: 1,
+                explanation: "WindowsFactory is a Concrete Factory that implements the GUIFactory interface."
+            },
+            {
+                question: "The client depends mainly on:",
+                options: ["Concrete Classes", "Abstract Interfaces", "Databases", "Global Variables"],
+                correctAnswer: 1,
+                explanation: "The client depends mainly on Abstract Interfaces (GUIFactory, Button, Checkbox) rather than concrete implementations."
+            },
+            {
+                question: "Which is a real-world analogy?",
+                options: ["Furniture Store", "Printer Driver", "Browser Cache", "CPU Scheduler"],
+                correctAnswer: 0,
+                explanation: "A Furniture Store is a real-world analogy where you can get matching furniture (chair + table) from the same style."
+            },
+            {
+                question: "Modern Furniture Factory creates:",
+                options: ["Modern Chair + Modern Table", "Modern Chair + Classic Table", "Any Random Furniture", "Only Chairs"],
+                correctAnswer: 0,
+                explanation: "Modern Furniture Factory creates matching Modern Chair + Modern Table to ensure consistency."
+            },
+            {
+                question: "Abstract Factory ensures:",
+                options: ["Incompatibility", "Consistency", "Duplication", "Complexity"],
+                correctAnswer: 1,
+                explanation: "Abstract Factory ensures consistency by creating products that work together from the same family."
+            },
+            {
+                question: "A major benefit is:",
+                options: ["Easy switching between families", "More if-else", "Less abstraction", "Tighter coupling"],
+                correctAnswer: 0,
+                explanation: "A major benefit is easy switching between families - just change the factory and the whole product family changes."
+            },
+            {
+                question: "Adding LinuxFactory demonstrates:",
+                options: ["Scalability", "Inheritance Only", "Tight Coupling", "Singleton"],
+                correctAnswer: 0,
+                explanation: "Adding LinuxFactory demonstrates scalability - you can add new product families without modifying existing code."
+            },
+            {
+                question: "Which is NOT an advantage?",
+                options: ["Consistency", "Loose Coupling", "Scalability", "Simplicity"],
+                correctAnswer: 3,
+                explanation: "Simplicity is NOT an advantage - Abstract Factory adds complexity with more classes and abstractions."
+            },
+            {
+                question: "One disadvantage is:",
+                options: ["Hard to extend products", "Tight coupling", "No abstraction", "No reuse"],
+                correctAnswer: 0,
+                explanation: "One disadvantage is that it's hard to extend products - adding a new product requires updating all factories."
+            },
+            {
+                question: "Adding Slider requires:",
+                options: ["No changes", "Updating all factories", "Deleting products", "Rewriting client only"],
+                correctAnswer: 1,
+                explanation: "Adding Slider requires updating all factories (GUIFactory interface and all concrete factories)."
+            },
+            {
+                question: "Abstract Factory is more complex than:",
+                options: ["Strategy", "Singleton", "Factory Method", "Observer"],
+                correctAnswer: 2,
+                explanation: "Abstract Factory is more complex than Factory Method as it deals with product families instead of single products."
+            },
+            {
+                question: "Factory Method creates:",
+                options: ["Families", "Multiple Products", "One Product", "Environments"],
+                correctAnswer: 2,
+                explanation: "Factory Method creates one product at a time."
+            },
+            {
+                question: "Abstract Factory creates:",
+                options: ["Multiple Related Products", "One Product Only", "One Instance", "One Method"],
+                correctAnswer: 0,
+                explanation: "Abstract Factory creates multiple related products (a family of products)."
+            },
+            {
+                question: "The phrase 'Factory of Factories' refers to:",
+                options: ["Singleton", "Builder", "Abstract Factory", "Adapter"],
+                correctAnswer: 2,
+                explanation: "The phrase 'Factory of Factories' refers to Abstract Factory as it creates factories that create products."
+            },
+            {
+                question: "Which use case fits Abstract Factory?",
+                options: ["UI Themes", "Cross-platform Apps", "Database Drivers", "All of the Above"],
+                correctAnswer: 3,
+                explanation: "All of the mentioned use cases (UI Themes, Cross-platform Apps, Database Drivers) fit Abstract Factory."
+            },
+            {
+                question: "Which principle is improved?",
+                options: ["Loose Coupling", "Tight Coupling", "Global State", "Recursion"],
+                correctAnswer: 0,
+                explanation: "Loose Coupling is improved as the client depends on abstractions rather than concrete classes."
+            },
+            {
+                question: "The client should know:",
+                options: ["Concrete Products", "Concrete Factories", "Abstract Interfaces", "Internal Implementation"],
+                correctAnswer: 2,
+                explanation: "The client should know Abstract Interfaces (GUIFactory, Button, Checkbox) but not concrete implementations."
+            },
+            {
+                question: "Abstract Factory helps hide:",
+                options: ["Object Creation Logic", "Inheritance", "Memory Allocation", "Testing"],
+                correctAnswer: 0,
+                explanation: "Abstract Factory helps hide object creation logic from the client."
+            },
+            {
+                question: "If there is only one product, Abstract Factory is usually:",
+                options: ["Recommended", "Necessary", "Overkill", "Mandatory"],
+                correctAnswer: 2,
+                explanation: "If there is only one product, Abstract Factory is usually overkill - Factory Method would be simpler."
+            },
+            {
+                question: "Overusing Abstract Factory is:",
+                options: ["Good Practice", "Common Mistake", "Required", "Recommended"],
+                correctAnswer: 1,
+                explanation: "Overusing Abstract Factory is a common mistake that leads to unnecessary complexity."
+            },
+            {
+                question: "WindowsButton and WindowsCheckbox belong to:",
+                options: ["Same Family", "Different Families", "Different Factories", "Different Systems"],
+                correctAnswer: 0,
+                explanation: "WindowsButton and WindowsCheckbox belong to the same Family (Windows family)."
+            },
+            {
+                question: "MacButton belongs to:",
+                options: ["Windows Family", "Linux Family", "Mac Family", "Database Family"],
+                correctAnswer: 2,
+                explanation: "MacButton belongs to the Mac Family."
+            },
+            {
+                question: "Abstract Factory is best when:",
+                options: ["Products are related", "Products are random", "Only one class exists", "No abstraction is needed"],
+                correctAnswer: 0,
+                explanation: "Abstract Factory is best when products are related and belong to families."
+            },
+            {
+                question: "A key benefit is:",
+                options: ["Compatibility between products", "Increased if-else usage", "Global Variables", "Reduced Reusability"],
+                correctAnswer: 0,
+                explanation: "A key benefit is compatibility between products - products from the same family work together."
+            },
+            {
+                question: "The lecture visualization shows:",
+                options: ["GUIFactory at the top", "Singleton hierarchy", "Observer hierarchy", "MVC architecture"],
+                correctAnswer: 0,
+                explanation: "The lecture visualization shows GUIFactory at the top of the hierarchy."
+            },
+            {
+                question: "WindowsButton implements:",
+                options: ["GUIFactory", "Button", "Checkbox", "Client"],
+                correctAnswer: 1,
+                explanation: "WindowsButton implements the Button interface."
+            },
+            {
+                question: "The pattern belongs to:",
+                options: ["Behavioral Patterns", "Structural Patterns", "Creational Patterns", "Architectural Patterns"],
+                correctAnswer: 2,
+                explanation: "Abstract Factory belongs to Creational Patterns."
+            },
+            {
+                question: "Changing factory can change:",
+                options: ["Entire Product Family", "Database Schema", "Programming Language", "CPU Architecture"],
+                correctAnswer: 0,
+                explanation: "Changing factory can change the entire Product Family - all products switch to the new family."
+            },
+            {
+                question: "The pattern avoids:",
+                options: ["Loose Coupling", "Consistency", "Tight Coupling", "Scalability"],
+                correctAnswer: 2,
+                explanation: "The pattern avoids tight coupling by using abstractions."
+            },
+            {
+                question: "The most important idea in Abstract Factory is:",
+                options: ["Create one object efficiently", "Create families of related objects together", "Manage application state", "Decorate objects dynamically"],
+                correctAnswer: 1,
+                explanation: "The most important idea in Abstract Factory is to create families of related objects together."
+            }
+        ]
     }
 };
 
@@ -2833,6 +3078,248 @@ ApplePay</pre>
                 </ul>
                 <p>العميل فقط يطلب المنتج.</p>
                 <p>وهذا بالضبط ما تفعله Factory Method.</p>
+            </div>
+        </div>
+    `,
+    6: `
+        <div class="lecture-card">
+            <div class="lecture-header">
+                <span class="lecture-number">Lecture 6</span>
+                <h3>Abstract Factory Pattern</h3>
+            </div>
+            <div class="lecture-content">
+                <h4>ما هو Abstract Factory؟</h4>
+                <p>الـ Abstract Factory هو Creational Design Pattern يوفر Interface لإنشاء عائلات (Families) من Objects المرتبطة ببعضها دون معرفة الـ Concrete Classes المستخدمة.</p>
+                <p>بمعنى أبسط:</p>
+                <p>بدل ما تنشئ Objects مباشرة باستخدام:</p>
+                <pre>new WindowsButton();
+new WindowsCheckbox();</pre>
+                <p>تستخدم Factory واحدة تنشئ مجموعة Objects متوافقة مع بعضها.</p>
+
+                <h4>لماذا نحتاجه؟</h4>
+                <p>تخيل أنك تبني UI يعمل على:</p>
+                <ul>
+                    <li>Windows</li>
+                    <li>Mac</li>
+                </ul>
+                <p>وكل نظام له:</p>
+                <ul>
+                    <li>Button</li>
+                    <li>Checkbox</li>
+                </ul>
+                <p>بدون Abstract Factory ستكتب:</p>
+                <pre>if(os == "Windows")
+   button = new WindowsButton();
+else
+   button = new MacButton();</pre>
+                <p>ومع زيادة المنتجات:</p>
+                <pre>if(os == "Windows")</pre>
+                <p>يتكرر في كل مكان.</p>
+                <p><strong>المشاكل:</strong></p>
+                <ul>
+                    <li>Too many if-else</li>
+                    <li>Tight Coupling</li>
+                    <li>Hard to extend</li>
+                    <li>صعب إضافة Linux لاحقًا</li>
+                </ul>
+
+                <h4>الحل</h4>
+                <p>نعمل Factory لكل Family.</p>
+                <p><strong>WindowsFactory</strong></p>
+                <p>تنشئ:</p>
+                <pre>WindowsButton
+WindowsCheckbox</pre>
+                <p><strong>MacFactory</strong></p>
+                <p>تنشئ:</p>
+                <pre>MacButton
+MacCheckbox</pre>
+                <p>وهكذا نحافظ على التوافق بين العناصر.</p>
+
+                <h4>الفكرة الأساسية</h4>
+                <p><strong>Create families of related objects.</strong></p>
+                <p>يعني المصنع لا ينشئ Object واحد.</p>
+                <p>بل ينشئ مجموعة مرتبطة ببعضها.</p>
+                <p>مثال:</p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Factory</th>
+                            <th>Products</th>
+                        </tr>
+                        <tr>
+                            <td>WindowsFactory</td>
+                            <td>WindowsButton + WindowsCheckbox</td>
+                        </tr>
+                        <tr>
+                            <td>MacFactory</td>
+                            <td>MacButton + MacCheckbox</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Structure</h4>
+                <h5>1. Abstract Factory</h5>
+                <p>واجهة تحدد المنتجات الممكن إنشاؤها.</p>
+                <pre>interface GUIFactory {
+   Button createButton();
+   Checkbox createCheckbox();
+}</pre>
+
+                <h5>2. Concrete Factories</h5>
+                <p><strong>WindowsFactory</strong></p>
+                <pre>createButton()
+createCheckbox()</pre>
+                <p>تنشئ منتجات ويندوز.</p>
+                <p><strong>MacFactory</strong></p>
+                <p>تنشئ منتجات ماك.</p>
+
+                <h5>3. Abstract Products</h5>
+                <pre>Button
+Checkbox</pre>
+                <p>واجهات عامة.</p>
+
+                <h5>4. Concrete Products</h5>
+                <pre>WindowsButton
+MacButton
+WindowsCheckbox
+MacCheckbox</pre>
+                <p>التنفيذ الفعلي.</p>
+
+                <h5>5. Client</h5>
+                <p>يتعامل مع:</p>
+                <pre>GUIFactory
+Button
+Checkbox</pre>
+                <p>فقط.</p>
+                <p>ولا يعرف الكلاسات الحقيقية.</p>
+
+                <h4>مثال الأثاث (مهم جدًا)</h4>
+                <p>المحاضرة ذكرت مثال:</p>
+                <p><strong>Modern Factory</strong></p>
+                <p>تنشئ:</p>
+                <pre>Modern Chair
+Modern Table</pre>
+                <p><strong>Classic Factory</strong></p>
+                <p>تنشئ:</p>
+                <pre>Classic Chair
+Classic Table</pre>
+                <p>لا يصح:</p>
+                <pre>Modern Chair + Classic Table</pre>
+                <p>لأن التصميم سيصبح غير متناسق.</p>
+
+                <h4>متى نستخدمه؟</h4>
+                <p>استخدمه عندما:</p>
+                <h5>1. لديك Families من المنتجات</h5>
+                <p>مثال:</p>
+                <pre>Windows Family
+Mac Family
+Linux Family</pre>
+                <h5>2. تريد ضمان التوافق</h5>
+                <p>كل منتجات نفس العائلة تعمل معًا.</p>
+                <h5>3. تريد إخفاء منطق الإنشاء</h5>
+                <h5>4. تريد نظامًا قابلًا للتوسع</h5>
+
+                <h4>المميزات</h4>
+                <h5>1. Consistency</h5>
+                <p>منتجات نفس المصنع متوافقة دائمًا.</p>
+
+                <h5>2. Loose Coupling</h5>
+                <p>العميل لا يعرف Concrete Classes.</p>
+
+                <h5>3. Easy Switching</h5>
+                <p>بدل:</p>
+                <pre>WindowsFactory</pre>
+                <p>ضع:</p>
+                <pre>MacFactory</pre>
+                <p>فيتغير النظام كله.</p>
+
+                <h5>4. Scalable</h5>
+                <p>يمكن إضافة:</p>
+                <pre>LinuxFactory
+DarkThemeFactory</pre>
+                <p>بسهولة.</p>
+
+                <h4>العيوب</h4>
+                <h5>1. Hard to Extend Products</h5>
+                <p>إذا أضفت:</p>
+                <pre>Slider</pre>
+                <p>يجب تعديل:</p>
+                <pre>GUIFactory
+WindowsFactory
+MacFactory</pre>
+                <p>وكل المصانع الأخرى.</p>
+
+                <h5>2. More Complexity</h5>
+                <p>Classes أكثر</p>
+                <p>Abstractions أكثر</p>
+
+                <h4>Factory Method vs Abstract Factory</h4>
+                <p>من أهم أجزاء المحاضرة.</p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Factory Method</th>
+                            <th>Abstract Factory</th>
+                        </tr>
+                        <tr>
+                            <td>Scope</td>
+                            <td>One Product</td>
+                            <td>Multiple Products</td>
+                        </tr>
+                        <tr>
+                            <td>Complexity</td>
+                            <td>Simpler</td>
+                            <td>More Complex</td>
+                        </tr>
+                        <tr>
+                            <td>Example</td>
+                            <td>Create Button</td>
+                            <td>Create Button + Checkbox</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>استخدامات حقيقية</h4>
+                <h5>UI Frameworks</h5>
+                <pre>Windows / Mac</pre>
+
+                <h5>Games</h5>
+                <pre>Desert Environment / Ice Environment</pre>
+
+                <h5>Databases</h5>
+                <pre>MySQL / Oracle</pre>
+
+                <h5>Cross-platform Applications</h5>
+
+                <h4>أخطاء شائعة</h4>
+                <h5>1. Overusing It</h5>
+                <p>لا تستخدمه إذا:</p>
+                <ul>
+                    <li>يوجد Product واحد فقط.</li>
+                    <li>لا توجد Families.</li>
+                </ul>
+
+                <h5>2. الخلط مع Factory Method</h5>
+                <p><strong>Factory Method:</strong></p>
+                <p>Single Product</p>
+                <p><strong>Abstract Factory:</strong></p>
+                <p>Group of Related Products</p>
+
+                <h4>ملخص الفاينال</h4>
+                <p>احفظ:</p>
+                <ul>
+                    <li>تعريف Abstract Factory.</li>
+                    <li>لماذا نستخدمه.</li>
+                    <li>Structure بالكامل.</li>
+                    <li>Abstract Factory / Concrete Factory.</li>
+                    <li>Abstract Product / Concrete Product.</li>
+                    <li>Furniture Example.</li>
+                    <li>Advantages.</li>
+                    <li>Disadvantages.</li>
+                    <li>Factory Method vs Abstract Factory.</li>
+                    <li>Common Mistakes.</li>
+                </ul>
             </div>
         </div>
     `
