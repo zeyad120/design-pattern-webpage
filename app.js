@@ -734,6 +734,251 @@ const quizDatabase = {
                 explanation: "Design patterns are applications of design principles, providing concrete solutions that implement principles like SOLID."
             }
         ]
+    },
+    "singleton-pattern": {
+        title: "Lecture 4: Singleton Pattern",
+        questions: [
+            {
+                question: "What is the primary goal of Singleton Pattern?",
+                options: ["Create many objects", "Ensure only one instance exists", "Improve inheritance", "Eliminate classes"],
+                correctAnswer: 1,
+                explanation: "The primary goal of Singleton Pattern is to ensure only one instance exists."
+            },
+            {
+                question: "Singleton belongs to which category?",
+                options: ["Structural", "Behavioral", "Creational", "Architectural"],
+                correctAnswer: 2,
+                explanation: "Singleton belongs to the Creational category of design patterns."
+            },
+            {
+                question: "Singleton controls:",
+                options: ["Object behavior", "Object communication", "Instance creation", "Database access"],
+                correctAnswer: 2,
+                explanation: "Singleton controls instance creation to ensure only one instance exists."
+            },
+            {
+                question: "Lazy Initialization means:",
+                options: ["Instance created at startup", "Instance created only when needed", "Instance never created", "Multiple instances created"],
+                correctAnswer: 1,
+                explanation: "Lazy Initialization means the instance is created only when needed."
+            },
+            {
+                question: "An advantage of Lazy Initialization is:",
+                options: ["Better testing", "Saves resources", "Faster compilation", "Less memory management"],
+                correctAnswer: 1,
+                explanation: "An advantage of Lazy Initialization is that it saves resources by creating the instance only when needed."
+            },
+            {
+                question: "A disadvantage of basic Lazy Initialization is:",
+                options: ["High memory usage", "Not thread-safe", "Slow database access", "Difficult syntax"],
+                correctAnswer: 1,
+                explanation: "A disadvantage of basic Lazy Initialization is that it's not thread-safe."
+            },
+            {
+                question: "What happens if two threads access a non-thread-safe Singleton simultaneously?",
+                options: ["Nothing happens", "Program stops", "Multiple instances may be created", "Object is deleted"],
+                correctAnswer: 2,
+                explanation: "If two threads access a non-thread-safe Singleton simultaneously, multiple instances may be created."
+            },
+            {
+                question: "Thread safety becomes important when:",
+                options: ["One thread exists", "Multiple threads access Singleton", "No objects exist", "Using arrays"],
+                correctAnswer: 1,
+                explanation: "Thread safety becomes important when multiple threads access the Singleton."
+            },
+            {
+                question: "Which thread-safe solution is the simplest?",
+                options: ["Static Holder", "Double-Checked Locking", "Synchronized Method", "Factory Method"],
+                correctAnswer: 2,
+                explanation: "Synchronized Method is the simplest thread-safe solution."
+            },
+            {
+                question: "The drawback of Synchronized Method is:",
+                options: ["Hidden dependencies", "Performance overhead", "Memory leak", "No lazy loading"],
+                correctAnswer: 1,
+                explanation: "The drawback of Synchronized Method is performance overhead due to synchronization."
+            },
+            {
+                question: "Double-Checked Locking synchronizes:",
+                options: ["Always", "Never", "Only when needed", "After creation"],
+                correctAnswer: 2,
+                explanation: "Double-Checked Locking synchronizes only when needed."
+            },
+            {
+                question: "Double-Checked Locking is:",
+                options: ["Simple but slow", "Complex but efficient", "Easy and inefficient", "Deprecated"],
+                correctAnswer: 1,
+                explanation: "Double-Checked Locking is complex but efficient."
+            },
+            {
+                question: "Which variation is lazy and thread-safe?",
+                options: ["Eager Singleton", "Static Inner Class", "Prototype", "Builder"],
+                correctAnswer: 1,
+                explanation: "Static Inner Class is lazy and thread-safe."
+            },
+            {
+                question: "Which Singleton variation is recommended in many languages?",
+                options: ["Eager", "Lazy", "Static Holder", "Prototype"],
+                correctAnswer: 2,
+                explanation: "Static Holder is recommended in many languages as it's simple and thread-safe."
+            },
+            {
+                question: "Which variation has the highest complexity?",
+                options: ["Eager", "Lazy", "Double-Checked Locking", "Static Holder"],
+                correctAnswer: 2,
+                explanation: "Double-Checked Locking has the highest complexity."
+            },
+            {
+                question: "Which variation is NOT thread-safe by default?",
+                options: ["Synchronized", "Double-Checked", "Lazy", "Static Holder"],
+                correctAnswer: 2,
+                explanation: "Lazy is NOT thread-safe by default."
+            },
+            {
+                question: "Using Singleton as a global variable may cause:",
+                options: ["Loose coupling", "Hidden dependencies", "Better testing", "Better abstraction"],
+                correctAnswer: 1,
+                explanation: "Using Singleton as a global variable may cause hidden dependencies."
+            },
+            {
+                question: "A Singleton with too many responsibilities becomes:",
+                options: ["Strategy Object", "God Object", "Adapter Object", "Proxy Object"],
+                correctAnswer: 1,
+                explanation: "A Singleton with too many responsibilities becomes a God Object."
+            },
+            {
+                question: "Excessive responsibility in Singleton violates:",
+                options: ["OCP only", "ISP only", "SRP and DIP", "LSP only"],
+                correctAnswer: 2,
+                explanation: "Excessive responsibility in Singleton violates SRP and DIP."
+            },
+            {
+                question: "Singleton is controversial because of:",
+                options: ["Hidden dependencies", "Global state", "Difficult testing", "All of the above"],
+                correctAnswer: 3,
+                explanation: "Singleton is controversial because of hidden dependencies, global state, and difficult testing."
+            },
+            {
+                question: "\"Singleton is global state in disguise\" means:",
+                options: ["Singleton hides global access behind a class", "Singleton improves testing", "Singleton removes coupling", "Singleton creates many objects"],
+                correctAnswer: 0,
+                explanation: "\"Singleton is global state in disguise\" means Singleton hides global access behind a class."
+            },
+            {
+                question: "One testing problem with Singleton is:",
+                options: ["Easy reset", "Easy mocking", "Hard to reset instance", "No dependencies"],
+                correctAnswer: 2,
+                explanation: "One testing problem with Singleton is that it's hard to reset the instance between tests."
+            },
+            {
+                question: "Singleton often makes unit testing:",
+                options: ["Easier", "Faster", "Fragile", "Automatic"],
+                correctAnswer: 2,
+                explanation: "Singleton often makes unit testing fragile due to shared state."
+            },
+            {
+                question: "Why is mocking Singleton difficult?",
+                options: ["Global shared state", "Too many interfaces", "No constructors", "Multiple instances"],
+                correctAnswer: 0,
+                explanation: "Mocking Singleton is difficult because of global shared state."
+            },
+            {
+                question: "Modern advice prefers:",
+                options: ["Singleton over DI", "Dependency Injection over Singleton", "Static methods only", "Global variables"],
+                correctAnswer: 1,
+                explanation: "Modern advice prefers Dependency Injection over Singleton."
+            },
+            {
+                question: "Dependency Injection provides:",
+                options: ["Hidden dependencies", "Explicit dependencies", "Global state", "Tight coupling"],
+                correctAnswer: 1,
+                explanation: "Dependency Injection provides explicit dependencies."
+            },
+            {
+                question: "Compared to Singleton, Dependency Injection is:",
+                options: ["Harder to test", "Easier to test", "More global", "More hidden"],
+                correctAnswer: 1,
+                explanation: "Compared to Singleton, Dependency Injection is easier to test."
+            },
+            {
+                question: "Singleton usually introduces:",
+                options: ["Loose coupling", "Hidden coupling", "Zero coupling", "Dynamic coupling"],
+                correctAnswer: 1,
+                explanation: "Singleton usually introduces hidden coupling."
+            },
+            {
+                question: "A valid use case for Singleton is:",
+                options: ["System-wide shared resource", "Temporary variables", "Business logic classes", "Data transfer objects"],
+                correctAnswer: 0,
+                explanation: "A valid use case for Singleton is a system-wide shared resource."
+            },
+            {
+                question: "Singleton should be used when:",
+                options: ["Many instances are required", "Exactly one instance is required", "Testing is difficult", "State changes frequently"],
+                correctAnswer: 1,
+                explanation: "Singleton should be used when exactly one instance is required."
+            },
+            {
+                question: "Singleton is best when state is:",
+                options: ["Random", "Shared and carefully managed", "Always changing", "Unknown"],
+                correctAnswer: 1,
+                explanation: "Singleton is best when state is shared and carefully managed."
+            },
+            {
+                question: "Singleton should NOT be used for:",
+                options: ["Shared configuration", "Logger service", "Business logic classes", "Resource manager"],
+                correctAnswer: 2,
+                explanation: "Singleton should NOT be used for business logic classes."
+            },
+            {
+                question: "Avoid Singleton when:",
+                options: ["Multiple instances may be needed later", "One instance is required", "Shared resources exist", "Configuration is global"],
+                correctAnswer: 0,
+                explanation: "Avoid Singleton when multiple instances may be needed later."
+            },
+            {
+                question: "Which statement is a misconception?",
+                options: ["Singleton controls instance creation", "Singleton is always bad", "Singleton can be useful", "Singleton may need thread safety"],
+                correctAnswer: 1,
+                explanation: "The misconception is that Singleton is always bad - it can be useful in certain cases."
+            },
+            {
+                question: "Which statement is FALSE?",
+                options: ["Singleton means only one object forever", "Singleton controls instance creation", "Singleton may be useful", "Singleton can be misused"],
+                correctAnswer: 0,
+                explanation: "The FALSE statement is that Singleton means only one object forever - it can be replaced or the pattern can be changed."
+            },
+            {
+                question: "Singleton is NOT simply:",
+                options: ["Object creation control", "Static methods", "Design Pattern", "Creational Pattern"],
+                correctAnswer: 1,
+                explanation: "Singleton is NOT simply static methods - it's a design pattern that controls instance creation."
+            },
+            {
+                question: "According to the lecture summary, Singleton is:",
+                options: ["Difficult to implement", "Easy to implement, easy to misuse", "Obsolete", "Behavioral"],
+                correctAnswer: 1,
+                explanation: "According to the lecture summary, Singleton is easy to implement but easy to misuse."
+            },
+            {
+                question: "The lecture states that thread safety is:",
+                options: ["Optional", "Rarely important", "Critical", "Unrelated"],
+                correctAnswer: 2,
+                explanation: "The lecture states that thread safety is critical for Singleton."
+            },
+            {
+                question: "Singleton is often considered:",
+                options: ["A framework", "An anti-pattern", "A database", "A compiler"],
+                correctAnswer: 1,
+                explanation: "Singleton is often considered an anti-pattern due to its global state and testing issues."
+            },
+            {
+                question: "The final recommendation of the lecture is:",
+                options: ["Always use Singleton", "Avoid abstractions", "Prefer Dependency Injection in modern systems", "Use global variables"],
+                correctAnswer: 2,
+                explanation: "The final recommendation of the lecture is to prefer Dependency Injection in modern systems."
+            }
+        ]
     }
 };
 
@@ -1812,6 +2057,306 @@ Database Interface
                     <li>Strategy vs State.</li>
                     <li>Relationship between SOLID and Pattern Categories.</li>
                 </ul>
+            </div>
+        </div>
+    `,
+    4: `
+        <div class="lecture-card">
+            <div class="lecture-header">
+                <span class="lecture-number">Lecture 4</span>
+                <h3>Singleton Pattern</h3>
+            </div>
+            <div class="lecture-content">
+                <h4>أولًا: ما هو Singleton Pattern؟</h4>
+                <p>الـ Singleton هو Design Pattern من نوع Creational Pattern لأن وظيفته الأساسية التحكم في إنشاء الـ Objects.</p>
+                <p>فكرته بسيطة جدًا:</p>
+                <p>يضمن وجود نسخة (Instance) واحدة فقط من الكلاس طوال عمر البرنامج، ويوفر نقطة وصول عامة لها.</p>
+
+                <h4>لماذا نحتاج Singleton؟</h4>
+                <p>تخيل عندك:</p>
+                <p><strong>Database Connection</strong></p>
+                <p>لو كل جزء من البرنامج عمل:</p>
+                <pre>new DatabaseConnection();</pre>
+                <p>هيتعمل Connections كتير بدون داعي.</p>
+                <p>الأفضل:</p>
+                <pre>DatabaseConnection.getInstance();</pre>
+                <p>وكل البرنامج يستخدم نفس الـ Connection.</p>
+
+                <h4>أمثلة حقيقية</h4>
+                <p><strong>Logger</strong></p>
+                <p>كل البرنامج يكتب في نفس ملف الـ Log.</p>
+                <p><strong>Configuration Manager</strong></p>
+                <p>كل البرنامج يقرأ نفس الإعدادات.</p>
+                <p><strong>Printer Spooler</strong></p>
+                <p>إدارة الطباعة من خلال كائن واحد.</p>
+                <p><strong>Cache Manager</strong></p>
+                <p>تخزين البيانات المشتركة.</p>
+
+                <h4>Structure of Singleton</h4>
+                <p>أي Singleton يحتوي على 3 أشياء:</p>
+                <h5>1. Constructor Private</h5>
+                <pre>private Singleton() {}</pre>
+                <p>حتى لا يستطيع أحد عمل:</p>
+                <pre>new Singleton();</pre>
+                <h5>2. Static Instance</h5>
+                <pre>private static Singleton instance;</pre>
+                <p>النسخة الوحيدة من الكلاس.</p>
+                <h5>3. Public Access Method</h5>
+                <pre>public static Singleton getInstance()</pre>
+                <p>الطريقة الوحيدة للحصول على الكائن.</p>
+
+                <h4>Basic Singleton</h4>
+                <pre>class Singleton {
+    private static Singleton instance;
+
+    private Singleton() {}
+
+    public static Singleton getInstance() {
+        if(instance == null)
+            instance = new Singleton();
+        return instance;
+    }
+}</pre>
+
+                <h4>المشكلة الأولى: Thread Safety</h4>
+                <p>لو عندك Thread 1 و Thread 2</p>
+                <p>الاثنان نفذا:</p>
+                <pre>if(instance == null)</pre>
+                <p>في نفس اللحظة.</p>
+                <p>كلاهما سيرى أن:</p>
+                <pre>instance == null</pre>
+                <p>ثم كلاهما ينشئ:</p>
+                <pre>new Singleton();</pre>
+                <p>فتصبح عندك نسختان.</p>
+                <p>وهذا يكسر فكرة Singleton بالكامل.</p>
+
+                <h4>الحل الأول: Synchronized Method</h4>
+                <pre>public static synchronized Singleton getInstance()</pre>
+                <p><strong>الميزة:</strong></p>
+                <p>سهل جدًا.</p>
+                <p><strong>العيب:</strong></p>
+                <p>أبطأ.</p>
+                <p>يوجد Performance Overhead.</p>
+                <p>لأن كل Thread ينتظر الآخر.</p>
+
+                <h4>الحل الثاني: Double Checked Locking</h4>
+                <p><strong>الفكرة:</strong></p>
+                <p>بدل ما نعمل Lock كل مرة.</p>
+                <p>نعمل Lock فقط إذا كانت الـ Instance غير موجودة.</p>
+                <pre>if(instance == null) {
+   synchronized(...) {
+      if(instance == null)
+          instance = new Singleton();
+   }
+}</pre>
+                <p><strong>الميزة:</strong></p>
+                <p>سريع.</p>
+                <p><strong>العيب:</strong></p>
+                <p>معقد.</p>
+
+                <h4>الحل الثالث: Static Holder</h4>
+                <p>أفضل حل غالبًا.</p>
+                <p>يعتمد على:</p>
+                <pre>private static class Holder {
+   static final Singleton INSTANCE = new Singleton();
+}</pre>
+                <p>ثم:</p>
+                <pre>return Holder.INSTANCE;</pre>
+                <p><strong>المميزات:</strong></p>
+                <ul>
+                    <li>Lazy</li>
+                    <li>Thread Safe</li>
+                    <li>سريع</li>
+                </ul>
+                <p>لذلك المحاضرة قالت إنه Recommended.</p>
+
+                <h4>أنواع Singleton</h4>
+                <h5>1. Eager Singleton</h5>
+                <p>ينشئ الـ Object فور تشغيل البرنامج.</p>
+                <pre>private static Singleton instance = new Singleton();</pre>
+                <p><strong>الميزة:</strong></p>
+                <p>Thread Safe</p>
+                <p><strong>العيب:</strong></p>
+                <p>يستهلك موارد حتى لو لم نستخدمه.</p>
+
+                <h5>2. Lazy Singleton</h5>
+                <p>ينشئ الكائن عند أول استخدام.</p>
+                <p><strong>الميزة:</strong></p>
+                <p>يوفر الموارد.</p>
+                <p><strong>العيب:</strong></p>
+                <p>غير Thread Safe.</p>
+
+                <h5>3. Synchronized Singleton</h5>
+                <p><strong>الميزة:</strong></p>
+                <p>Thread Safe</p>
+                <p><strong>العيب:</strong></p>
+                <p>أبطأ.</p>
+
+                <h5>4. Double Checked Locking</h5>
+                <p><strong>الميزة:</strong></p>
+                <p>سريع وآمن.</p>
+                <p><strong>العيب:</strong></p>
+                <p>أكثر تعقيدًا.</p>
+
+                <h5>5. Static Holder</h5>
+                <p>أفضل توازن بين:</p>
+                <ul>
+                    <li>الأداء</li>
+                    <li>البساطة</li>
+                    <li>الأمان</li>
+                </ul>
+
+                <h4>أخطاء شائعة</h4>
+                <h5>استخدام Singleton كـ Global Variable</h5>
+                <p>مثال:</p>
+                <pre>Singleton.getInstance()</pre>
+                <p>في كل مكان.</p>
+                <p>يبدو الأمر مريحًا.</p>
+                <p>لكن المشكلة:</p>
+                <p><strong>Hidden Dependencies</strong></p>
+                <p>أي لا تعرف من يعتمد على من بسهولة.</p>
+
+                <h5>God Object Problem</h5>
+                <p>مع الوقت يضيف المبرمج:</p>
+                <ul>
+                    <li>Logging</li>
+                    <li>Configuration</li>
+                    <li>Database</li>
+                    <li>Authentication</li>
+                </ul>
+                <p>داخل نفس Singleton.</p>
+                <p>فيصبح:</p>
+                <p>MegaSingleton</p>
+                <p>يعرف كل شيء ويفعل كل شيء.</p>
+                <p>وهذا يسمى:</p>
+                <p>God Object</p>
+
+                <h4>ما المبادئ التي يكسرها؟</h4>
+                <p><strong>SRP</strong></p>
+                <p>لأن الكلاس أصبح مسؤولًا عن أشياء كثيرة.</p>
+                <p><strong>DIP</strong></p>
+                <p>لأن الجميع يعتمد مباشرة على Singleton.</p>
+
+                <h4>لماذا يعتبره البعض Anti-Pattern؟</h4>
+                <p>المحاضرة ذكرت الأسباب التالية:</p>
+                <ul>
+                    <li>Hidden Dependencies</li>
+                    <li>لا ترى الاعتماد بوضوح.</li>
+                    <li>Global State</li>
+                    <li>كل النظام يشارك نفس الحالة.</li>
+                    <li>Difficult Unit Testing</li>
+                    <li>الاختبار يصبح أصعب.</li>
+                    <li>Hard Mocking</li>
+                    <li>صعب استبداله بكائن وهمي.</li>
+                    <li>Reduced Flexibility</li>
+                    <li>مرونة أقل.</li>
+                </ul>
+
+                <h4>مشاكل الاختبار (Testing)</h4>
+                <h5>المشكلة الأولى</h5>
+                <p>لا يمكن بسهولة عمل Reset للـ Instance.</p>
+                <h5>المشكلة الثانية</h5>
+                <p>Test يؤثر على Test آخر.</p>
+                <p>مثال:</p>
+                <pre>test1()</pre>
+                <p>غير بيانات Singleton.</p>
+                <p>ثم:</p>
+                <pre>test2()</pre>
+                <p>يجد البيانات قد تغيرت.</p>
+                <h5>المشكلة الثالثة</h5>
+                <p>صعوبة Mocking.</p>
+                <p>ولهذا تصبح الاختبارات:</p>
+                <p>Fragile Tests</p>
+
+                <h4>Singleton vs Dependency Injection</h4>
+                <p>المحاضرة ركزت جدًا على هذا الجدول.</p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Singleton</th>
+                            <th>Dependency Injection</th>
+                        </tr>
+                        <tr>
+                            <td>Global Access</td>
+                            <td>Explicit Dependencies</td>
+                        </tr>
+                        <tr>
+                            <td>Hard Testing</td>
+                            <td>Easy Testing</td>
+                        </tr>
+                        <tr>
+                            <td>Hidden Coupling</td>
+                            <td>Loose Coupling</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>ماذا يفضل اليوم؟</strong></p>
+                <p>في الأنظمة الحديثة:</p>
+                <p>Prefer Dependency Injection over Singleton</p>
+                <p>يعني استخدم DI قدر الإمكان بدل Singleton.</p>
+
+                <h4>متى نستخدم Singleton؟</h4>
+                <p>استخدمه عندما:</p>
+                <ul>
+                    <li>يوجد Shared Resource</li>
+                    <li>مثل:</li>
+                    <ul>
+                        <li>Logger</li>
+                        <li>Configuration Manager</li>
+                        <li>Cache</li>
+                    </ul>
+                    <li>نحتاج Instance واحدة فقط</li>
+                    <li>مثل مدير الطباعة.</li>
+                    <li>الحالة ثابتة أو مدارة بعناية</li>
+                </ul>
+
+                <h4>متى لا نستخدمه؟</h4>
+                <p>لا تستخدمه في:</p>
+                <ul>
+                    <li>Business Logic Classes</li>
+                    <li>مثل:</li>
+                    <ul>
+                        <li>OrderService</li>
+                        <li>CustomerService</li>
+                    </ul>
+                    <li>Classes تحتاج Testing كثير</li>
+                    <li>إذا كان قد نحتاج عدة Instances مستقبلاً</li>
+                </ul>
+
+                <h4>مفاهيم خاطئة مشهورة في الامتحان</h4>
+                <p><strong>خطأ</strong></p>
+                <p>Singleton means only one object forever.</p>
+                <p><strong>الصحيح:</strong></p>
+                <p>Singleton يتحكم في إنشاء النسخة وليس في سلوك الكلاس.</p>
+                <p><strong>خطأ</strong></p>
+                <p>Singleton is always bad.</p>
+                <p><strong>الصحيح:</strong></p>
+                <p>له استخدامات مناسبة وأخرى غير مناسبة.</p>
+                <p><strong>خطأ</strong></p>
+                <p>Singleton is just static methods.</p>
+                <p><strong>الصحيح:</strong></p>
+                <p>Singleton Pattern ≠ Static Class</p>
+                <p>لأن Singleton ما زال Object حقيقي له State ويمكن تمريره واختباره (بشكل محدود).</p>
+
+                <h4>ملخص الفاينال</h4>
+                <p>احفظ جيدًا:</p>
+                <ul>
+                    <li>تعريف Singleton.</li>
+                    <li>لماذا هو Creational Pattern.</li>
+                    <li>الفرق بين Eager و Lazy.</li>
+                    <li>مشكلة Thread Safety.</li>
+                    <li>Synchronized Method.</li>
+                    <li>Double Checked Locking.</li>
+                    <li>Static Holder.</li>
+                    <li>Hidden Dependencies.</li>
+                    <li>God Object.</li>
+                    <li>لماذا يعتبر Anti-Pattern.</li>
+                    <li>مشاكل Testing.</li>
+                    <li>Singleton vs Dependency Injection.</li>
+                    <li>متى يستخدم ومتى لا يستخدم.</li>
+                    <li>أشهر Misconceptions.</li>
+                </ul>
+                <p>دي تقريبًا كل النقاط المهمة في المحاضرة والتي غالبًا تأتي منها أسئلة الامتحان.</p>
             </div>
         </div>
     `
