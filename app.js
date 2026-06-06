@@ -1714,6 +1714,251 @@ const quizDatabase = {
                 explanation: "The correct sequence representing Adapter Pattern structure is Client → Adapter → Adaptee."
             }
         ]
+    },
+    "chain-of-responsibility-pattern": {
+        title: "Chain of Responsibility Pattern Quiz",
+        questions: [
+            {
+                question: "The Chain of Responsibility Pattern belongs to which category?",
+                options: ["Creational", "Structural", "Behavioral", "Architectural"],
+                correctAnswer: 2,
+                explanation: "The Chain of Responsibility Pattern belongs to the Behavioral category."
+            },
+            {
+                question: "The main purpose of Chain of Responsibility is to:",
+                options: ["Create objects", "Pass a request through multiple handlers", "Add new functionality", "Hide object creation"],
+                correctAnswer: 1,
+                explanation: "The main purpose of Chain of Responsibility is to pass a request through multiple handlers."
+            },
+            {
+                question: "In Chain of Responsibility, a request is:",
+                options: ["Processed by all handlers always", "Sent directly to the final handler", "Passed along a chain of handlers", "Ignored by default"],
+                correctAnswer: 2,
+                explanation: "In Chain of Responsibility, a request is passed along a chain of handlers."
+            },
+            {
+                question: "Each handler can:",
+                options: ["Only process the request", "Only reject the request", "Process or forward the request", "Create new handlers only"],
+                correctAnswer: 2,
+                explanation: "Each handler can process or forward the request."
+            },
+            {
+                question: "The main idea of CoR is to:",
+                options: ["Couple sender and receiver tightly", "Decouple sender from receiver", "Increase inheritance", "Reduce abstraction"],
+                correctAnswer: 1,
+                explanation: "The main idea of CoR is to decouple sender from receiver."
+            },
+            {
+                question: "Without CoR, systems often rely on:",
+                options: ["Interfaces", "Long if-else statements", "Factories", "Singletons"],
+                correctAnswer: 1,
+                explanation: "Without CoR, systems often rely on long if-else statements."
+            },
+            {
+                question: "A problem with long if-else approval logic is:",
+                options: ["Better flexibility", "Tight coupling", "Improved performance", "Less complexity"],
+                correctAnswer: 1,
+                explanation: "A problem with long if-else approval logic is tight coupling."
+            },
+            {
+                question: "Chain of Responsibility supports which principle?",
+                options: ["Open/Closed Principle", "Hard Coding Principle", "Global State Principle", "Memory Optimization Principle"],
+                correctAnswer: 0,
+                explanation: "Chain of Responsibility supports the Open/Closed Principle."
+            },
+            {
+                question: "In the approval example, the chain is:",
+                options: ["CEO → Director → Manager", "Manager → Director → CEO", "Director → CEO → Manager", "Manager → CEO → Director"],
+                correctAnswer: 1,
+                explanation: "In the approval example, the chain is Manager → Director → CEO."
+            },
+            {
+                question: "The first suitable handler will:",
+                options: ["Ignore the request", "Create another request", "Process the request", "Delete the request"],
+                correctAnswer: 2,
+                explanation: "The first suitable handler will process the request."
+            },
+            {
+                question: "The abstract Handler usually contains:",
+                options: ["Database connection", "Reference to next handler", "User interface", "Static methods only"],
+                correctAnswer: 1,
+                explanation: "The abstract Handler usually contains a reference to the next handler."
+            },
+            {
+                question: "The method used to connect handlers is:",
+                options: ["Execute()", "Process()", "SetNext()", "Build()"],
+                correctAnswer: 2,
+                explanation: "The method used to connect handlers is SetNext()."
+            },
+            {
+                question: "The Client typically sends the request to:",
+                options: ["The last handler", "A random handler", "The first handler in the chain", "All handlers simultaneously"],
+                correctAnswer: 2,
+                explanation: "The Client typically sends the request to the first handler in the chain."
+            },
+            {
+                question: "In the lecture example, Manager approves amounts:",
+                options: ["Less than 1000", "Less than 5000", "Less than 10000", "Any amount"],
+                correctAnswer: 0,
+                explanation: "In the lecture example, Manager approves amounts less than 1000."
+            },
+            {
+                question: "Director approves amounts:",
+                options: ["Less than 1000", "Less than 5000", "Less than 10000", "Greater than 10000"],
+                correctAnswer: 1,
+                explanation: "Director approves amounts less than 5000."
+            },
+            {
+                question: "CEO approves amounts:",
+                options: ["Less than 1000", "Less than 5000", "Less than 10000", "Less than 100"],
+                correctAnswer: 2,
+                explanation: "CEO approves amounts less than 10000."
+            },
+            {
+                question: "If no handler can process a request:",
+                options: ["It may go unhandled", "It is always approved", "It is automatically retried", "It becomes a command"],
+                correctAnswer: 0,
+                explanation: "If no handler can process a request, it may go unhandled."
+            },
+            {
+                question: "The flow of execution is:",
+                options: ["Random", "Sequential through handlers", "Parallel", "Circular"],
+                correctAnswer: 1,
+                explanation: "The flow of execution is sequential through handlers."
+            },
+            {
+                question: "A real-life analogy for CoR is:",
+                options: ["Power adapter", "Office approval system", "Factory production", "Database indexing"],
+                correctAnswer: 1,
+                explanation: "A real-life analogy for CoR is an office approval system."
+            },
+            {
+                question: "Which is NOT a benefit of CoR?",
+                options: ["Loose coupling", "Flexibility", "Easier extension", "Guaranteed handling"],
+                correctAnswer: 3,
+                explanation: "Guaranteed handling is NOT a benefit of CoR - requests may go unhandled."
+            },
+            {
+                question: "Loose coupling means:",
+                options: ["Sender knows exact receiver", "Sender does not know exact receiver", "Handlers know nothing", "No objects communicate"],
+                correctAnswer: 1,
+                explanation: "Loose coupling means the sender does not know the exact receiver."
+            },
+            {
+                question: "Adding a new handler usually requires:",
+                options: ["Modifying all handlers", "Rewriting the system", "Adding it to the chain", "Creating a database"],
+                correctAnswer: 2,
+                explanation: "Adding a new handler usually requires adding it to the chain."
+            },
+            {
+                question: "Which behavior is most common?",
+                options: ["Multiple handlers process request", "Single handler processes request", "No handler processes request", "Infinite processing"],
+                correctAnswer: 1,
+                explanation: "Single handler processes request is the most common behavior."
+            },
+            {
+                question: "In multiple-handler behavior:",
+                options: ["Every handler may perform part of the work", "Only the first handler works", "Only the last handler works", "Request stops immediately"],
+                correctAnswer: 0,
+                explanation: "In multiple-handler behavior, every handler may perform part of the work."
+            },
+            {
+                question: "Which is a valid use case?",
+                options: ["Logging systems", "Image compression only", "Sorting algorithms only", "Encryption only"],
+                correctAnswer: 0,
+                explanation: "Logging systems is a valid use case for Chain of Responsibility."
+            },
+            {
+                question: "Which is a valid use case?",
+                options: ["Middleware pipelines", "Binary trees only", "CPU scheduling only", "Database normalization only"],
+                correctAnswer: 0,
+                explanation: "Middleware pipelines is a valid use case for Chain of Responsibility."
+            },
+            {
+                question: "Which is a valid use case?",
+                options: ["Customer support escalation", "Array searching only", "Stack implementation only", "Linked lists only"],
+                correctAnswer: 0,
+                explanation: "Customer support escalation is a valid use case for Chain of Responsibility."
+            },
+            {
+                question: "One disadvantage of CoR is:",
+                options: ["Difficult debugging", "No flexibility", "No extensibility", "No abstraction"],
+                correctAnswer: 0,
+                explanation: "One disadvantage of CoR is difficult debugging."
+            },
+            {
+                question: "Another disadvantage is:",
+                options: ["Long chains may reduce performance", "No code reuse", "No inheritance", "No interfaces"],
+                correctAnswer: 0,
+                explanation: "Another disadvantage is that long chains may reduce performance."
+            },
+            {
+                question: "A common mistake is:",
+                options: ["Using interfaces", "Missing next handler", "Using abstraction", "Using composition"],
+                correctAnswer: 1,
+                explanation: "A common mistake is missing the next handler."
+            },
+            {
+                question: "Wrong ordering of handlers can cause:",
+                options: ["Better performance", "Correct results always", "Incorrect results", "Less flexibility"],
+                correctAnswer: 2,
+                explanation: "Wrong ordering of handlers can cause incorrect results."
+            },
+            {
+                question: "According to SRP, each handler should:",
+                options: ["Have one responsibility", "Perform all tasks", "Manage the entire chain", "Create all requests"],
+                correctAnswer: 0,
+                explanation: "According to SRP, each handler should have one responsibility."
+            },
+            {
+                question: "Which principle allows adding new handlers without changing old code?",
+                options: ["LSP", "OCP", "ISP", "DIP"],
+                correctAnswer: 1,
+                explanation: "OCP allows adding new handlers without changing old code."
+            },
+            {
+                question: "The sender in CoR:",
+                options: ["Knows the final receiver", "Must know every handler", "Is decoupled from receiver", "Controls every handler"],
+                correctAnswer: 2,
+                explanation: "The sender in CoR is decoupled from receiver."
+            },
+            {
+                question: "Chain of Responsibility is commonly compared with:",
+                options: ["Strategy and Command", "Singleton and Builder", "Adapter and Facade", "Factory and Prototype"],
+                correctAnswer: 0,
+                explanation: "Chain of Responsibility is commonly compared with Strategy and Command."
+            },
+            {
+                question: "Compared to Strategy, Chain of Responsibility:",
+                options: ["Uses a dynamic chain", "Uses one algorithm only", "Has no handlers", "Cannot forward requests"],
+                correctAnswer: 0,
+                explanation: "Compared to Strategy, Chain of Responsibility uses a dynamic chain."
+            },
+            {
+                question: "Compared to Command, Chain of Responsibility focuses on:",
+                options: ["Encapsulating requests", "Handling requests sequentially", "Creating requests", "Storing requests"],
+                correctAnswer: 1,
+                explanation: "Compared to Command, Chain of Responsibility focuses on handling requests sequentially."
+            },
+            {
+                question: "In a web application pipeline, handlers may include:",
+                options: ["Authentication and Validation", "Singleton and Factory", "Builder and Prototype", "Adapter and Facade"],
+                correctAnswer: 0,
+                explanation: "In a web application pipeline, handlers may include Authentication and Validation."
+            },
+            {
+                question: "The visualization of CoR is:",
+                options: ["Client → Handler1 → Handler2 → Handler3", "Handler → Client → Database", "Client → Factory → Object", "Client → Strategy → Algorithm"],
+                correctAnswer: 0,
+                explanation: "The visualization of CoR is Client → Handler1 → Handler2 → Handler3."
+            },
+            {
+                question: "Which statement best defines Chain of Responsibility?",
+                options: ["Creates families of objects", "Adds behavior dynamically", "Passes a request through a chain of handlers until handled", "Simplifies subsystem interfaces"],
+                correctAnswer: 2,
+                explanation: "Chain of Responsibility passes a request through a chain of handlers until handled."
+            }
+        ]
     }
 };
 
@@ -3772,6 +4017,303 @@ MacFactory</pre>
 
                 <h4>ملخص للحفظ</h4>
                 <p>Adapter Pattern = تحويل Interface إلى Interface آخر متوقع بواسطة Client بحيث تتمكن الأنظمة غير المتوافقة من العمل معًا دون تعديل الكود الأصلي.</p>
+            </div>
+        </div>
+    `,
+    8: `
+        <div class="lecture-card">
+            <div class="lecture-header">
+                <span class="lecture-number">Lecture 8</span>
+                <h3>Chain of Responsibility Pattern</h3>
+            </div>
+            <div class="lecture-content">
+                <h4>شرح محاضرة Chain of Responsibility Pattern</h4>
+                <p>أولاً: ما هو Chain of Responsibility Pattern؟</p>
+                <p>هو Behavioral Design Pattern يسمح بتمرير Request خلال سلسلة من الـ Handlers.</p>
+                <p>كل Handler يمتلك اختيارين:</p>
+                <ul>
+                    <li>Handle Request</li>
+                    <li>Pass Request To Next Handler</li>
+                </ul>
+                <p>ويستمر الطلب في التحرك داخل السلسلة حتى يجد Handler مناسب لمعالجته.</p>
+
+                <h4>الفكرة ببساطة</h4>
+                <p>بدلاً من أن يعرف الـ Client من المسؤول عن تنفيذ الطلب، يقوم بإرسال الطلب لأول عنصر في السلسلة فقط.</p>
+                <p>بعد ذلك:</p>
+                <ul>
+                    <li>Handler 1 يفحص الطلب.</li>
+                    <li>إذا استطاع التعامل معه → ينفذه.</li>
+                    <li>إذا لم يستطع → يرسله للذي بعده.</li>
+                </ul>
+                <p>وهكذا حتى نهاية السلسلة.</p>
+
+                <h4>المشكلة التي يحلها Pattern</h4>
+                <p>تخيل نظام موافقات داخل شركة.</p>
+                <p>لدينا:</p>
+                <ul>
+                    <li>Manager</li>
+                    <li>Director</li>
+                    <li>CEO</li>
+                </ul>
+
+                <p>بدون استخدام CoR:</p>
+                <pre>if(amount < 1000)
+   manager.approve();
+else if(amount < 5000)
+   director.approve();
+else if(amount < 10000)
+   ceo.approve();</pre>
+
+                <p>المشاكل:</p>
+                <p><strong>1. Tight Coupling</strong></p>
+                <p>الكود يعرف كل المسؤولين مباشرة.</p>
+
+                <p><strong>2. صعوبة التوسعة</strong></p>
+                <p>إذا أضفنا Vice President مثلاً سنعدل الكود.</p>
+
+                <p><strong>3. مخالفة OCP</strong></p>
+                <p>كل إضافة تحتاج تعديل للكود القديم.</p>
+
+                <p><strong>4. كثرة الـ Conditions</strong></p>
+                <p>الكود يصبح معقدًا كلما زاد عدد الحالات.</p>
+
+                <h4>الحل</h4>
+                <p>ننشئ سلسلة:</p>
+                <p>Manager → Director → CEO</p>
+                <p>كل واحد يقرر:</p>
+                <ul>
+                    <li>أتعامل مع الطلب.</li>
+                    <li>أو أرسله للذي بعدي.</li>
+                </ul>
+                <p>وبذلك يصبح النظام مرنًا جدًا.</p>
+
+                <h4>مثال من الحياة الواقعية</h4>
+                <p><strong>Office Approval System</strong></p>
+                <p>موظف يقدم طلبًا.</p>
+                <p><strong>Manager</strong></p>
+                <p>يفحص الطلب.</p>
+                <p>إذا لم يستطع الموافقة:</p>
+                <p>⬇</p>
+                <p><strong>Director</strong></p>
+                <p>يفحص الطلب.</p>
+                <p>إذا لم يستطع:</p>
+                <p>⬇</p>
+                <p><strong>CEO</strong></p>
+                <p>يتخذ القرار النهائي.</p>
+                <p>الطلب يتحرك خطوة بخطوة داخل السلسلة.</p>
+
+                <h4>مثال آخر من المحاضرة</h4>
+                <p><strong>معالجة بيانات مدينة</strong></p>
+                <p>Request يحتوي:</p>
+                <ul>
+                    <li>CityName</li>
+                    <li>Location</li>
+                    <li>Hotels</li>
+                    <li>Restaurants</li>
+                    <li>Images</li>
+                </ul>
+                <p>Handlers:</p>
+                <ul>
+                    <li>Get Location</li>
+                    <li>Get Hotels</li>
+                    <li>Get Restaurants</li>
+                    <li>Get Images</li>
+                </ul>
+                <p>كل Handler يضيف جزءًا من البيانات ثم يمرر الطلب للذي يليه.</p>
+
+                <h4>مثال آخر</h4>
+                <p><strong>Credit Card Processing</strong></p>
+                <p>Request:</p>
+                <ul>
+                    <li>Card Number</li>
+                    <li>CCV</li>
+                    <li>End Date</li>
+                    <li>Amount</li>
+                </ul>
+                <p>السلسلة:</p>
+                <p>Validate Card</p>
+                <p>↓</p>
+                <p>Check Balance</p>
+                <p>↓</p>
+                <p>Transaction</p>
+                <p>إذا فشل أي Handler:</p>
+                <ul>
+                    <li>Invalid Card Data</li>
+                    <li>Not Sufficient Balance</li>
+                </ul>
+                <p>ويتم إيقاف السلسلة.</p>
+
+                <h4>Structure of Chain of Responsibility</h4>
+                <p><strong>1. Handler</strong></p>
+                <p>الكلاس الأساسي.</p>
+                <p>يحتوي على:</p>
+                <pre>Handler next;</pre>
+                <p>لكي يعرف الـ Handler التالي.</p>
+                <p>ويحتوي على:</p>
+                <pre>handleRequest()</pre>
+                <p>التي ستنفذها الكلاسات المشتقة.</p>
+
+                <p><strong>2. Concrete Handlers</strong></p>
+                <p>مثل:</p>
+                <ul>
+                    <li>Manager</li>
+                    <li>Director</li>
+                    <li>CEO</li>
+                </ul>
+                <p>كل واحد يملك قواعده الخاصة لمعالجة الطلب.</p>
+
+                <p><strong>3. Client</strong></p>
+                <p>هو الذي يبني السلسلة.</p>
+                <p>مثال:</p>
+                <pre>manager.setNext(director);
+director.setNext(ceo);</pre>
+                <p>ثم يرسل الطلب لأول Handler فقط.</p>
+                <pre>manager.handleRequest(7000);</pre>
+                <p>وليس للـ CEO مباشرة.</p>
+
+                <h4>Flow of Execution</h4>
+                <p>إذا كان المبلغ:</p>
+                <p>7000</p>
+                <p><strong>Manager</strong></p>
+                <p>يفحص.</p>
+                <p>7000 > 1000</p>
+                <p>إذن يمرره.</p>
+                <p>⬇</p>
+                <p><strong>Director</strong></p>
+                <p>7000 > 5000</p>
+                <p>يمرره.</p>
+                <p>⬇</p>
+                <p><strong>CEO</strong></p>
+                <p>7000 < 10000</p>
+                <p>يوافق على الطلب.</p>
+                <p>إذن:</p>
+                <p>Manager → Director → CEO</p>
+                <p>والـ CEO هو الذي نفذ الطلب.</p>
+
+                <h4>Types of Chain Behavior</h4>
+                <p><strong>النوع الأول</strong></p>
+                <p><strong>Single Handler</strong></p>
+                <p>Handler واحد فقط هو الذي يعالج الطلب.</p>
+                <p>وهو الأكثر استخدامًا.</p>
+                <p>مثال:</p>
+                <p>Manager OR Director OR CEO</p>
+                <p>أول شخص مناسب يعالج الطلب ويتوقف المسار.</p>
+
+                <p><strong>النوع الثاني</strong></p>
+                <p><strong>Multiple Handlers</strong></p>
+                <p>كل Handler ينفذ جزءًا من العمل.</p>
+                <p>مثال:</p>
+                <p>Validation</p>
+                <p>↓</p>
+                <p>Logging</p>
+                <p>↓</p>
+                <p>Security</p>
+                <p>↓</p>
+                <p>Save Data</p>
+                <p>كلهم يعالجون الطلب بالتتابع.</p>
+
+                <h4>متى نستخدم Chain of Responsibility؟</h4>
+                <p>استخدمه عندما:</p>
+                <ul>
+                    <li><strong>Multiple Objects Can Handle Request</strong></li>
+                    <p>أكثر من كائن يستطيع التعامل مع الطلب.</p>
+                    <li><strong>Order Matters</strong></li>
+                    <p>ترتيب التنفيذ مهم.</p>
+                    <li><strong>Sender Should Not Know Receiver</strong></li>
+                    <p>المرسل لا يجب أن يعرف من سيعالج الطلب.</p>
+                    <li><strong>Flexible Routing</strong></li>
+                    <p>نحتاج مسارًا مرنًا للطلبات.</p>
+                </ul>
+
+                <h4>المميزات</h4>
+                <p><strong>1. Loose Coupling</strong></p>
+                <p>المرسل لا يعرف من سيعالج الطلب.</p>
+
+                <p><strong>2. Flexible Chain</strong></p>
+                <p>إضافة أو حذف Handler بسهولة.</p>
+
+                <p><strong>3. Single Responsibility</strong></p>
+                <p>كل Handler له مهمة واحدة فقط.</p>
+
+                <p><strong>4. Open/Closed Principle</strong></p>
+                <p>يمكن إضافة Handlers جديدة دون تعديل القديمة.</p>
+
+                <h4>العيوب</h4>
+                <p><strong>1. Request May Go Unhandled</strong></p>
+                <p>قد لا يوجد Handler مناسب.</p>
+
+                <p><strong>2. Debugging Difficulty</strong></p>
+                <p>صعب معرفة أين تمت معالجة الطلب.</p>
+
+                <p><strong>3. Performance Overhead</strong></p>
+                <p>الطلب قد يمر على عدد كبير من الـ Handlers.</p>
+
+                <h4>استخدامات حقيقية</h4>
+                <ul>
+                    <li>Logging Systems</li>
+                    <li>Event Handling Systems</li>
+                    <li>Authentication Filters</li>
+                    <li>Validation Pipelines</li>
+                    <li>Middleware</li>
+                    <li>Customer Support Escalation Systems</li>
+                </ul>
+
+                <h4>Chain vs Strategy</h4>
+                <table>
+                    <tr>
+                        <th>Chain of Responsibility</th>
+                        <th>Strategy</th>
+                    </tr>
+                    <tr>
+                        <td>Dynamic Chain</td>
+                        <td>One Algorithm</td>
+                    </tr>
+                    <tr>
+                        <td>Pass Request</td>
+                        <td>Execute Strategy</td>
+                    </tr>
+                </table>
+
+                <h4>Chain vs Command</h4>
+                <table>
+                    <tr>
+                        <th>Chain</th>
+                        <th>Command</th>
+                    </tr>
+                    <tr>
+                        <td>Handle Request</td>
+                        <td>Encapsulate Request</td>
+                    </tr>
+                    <tr>
+                        <td>Sequential Flow</td>
+                        <td>Independent Flow</td>
+                    </tr>
+                </table>
+
+                <h4>الأخطاء الشائعة</h4>
+                <p><strong>Missing Next Handler</strong></p>
+                <p>نسيان ربط السلسلة.</p>
+                <p>قد يؤدي لضياع الطلب.</p>
+
+                <p><strong>Long Chains</strong></p>
+                <p>سلاسل طويلة جدًا تقلل الأداء.</p>
+
+                <p><strong>Wrong Ordering</strong></p>
+                <p>ترتيب خاطئ للـ Handlers يؤدي لنتائج خاطئة.</p>
+
+                <h4>Design Principles Used</h4>
+                <p><strong>SRP</strong></p>
+                <p>كل Handler له مهمة واحدة.</p>
+
+                <p><strong>OCP</strong></p>
+                <p>إضافة Handlers جديدة بدون تعديل القديمة.</p>
+
+                <p><strong>Loose Coupling</strong></p>
+                <p>المرسل لا يعرف المستقبل الحقيقي للطلب.</p>
+
+                <h4>ملخص للحفظ</h4>
+                <p>احفظ الجملة دي:</p>
+                <p>Chain of Responsibility is a Behavioral Pattern that passes a request through a chain of handlers, where each handler can process the request or forward it to the next handler until it is handled.</p>
             </div>
         </div>
     `
